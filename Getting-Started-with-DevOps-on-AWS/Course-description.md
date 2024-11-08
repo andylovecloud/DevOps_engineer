@@ -45,41 +45,41 @@ General Cloud Computing Knowledge
 ## Course outline
 - Module 1: Introduction to DevOps
 
-Module Overview
-What is DevOps?
-Problems with Traditional Development Practices
-Why DevOps?
-Knowledge Check
-Summary
+ - Module Overview
+ - What is DevOps?
+ - Problems with Traditional Development Practices
+ - Why DevOps?
+ - Knowledge Check
+ - Summary
 
 
 - Module 2: DevOps Methodology
 
-Module Overview
-DevOps Culture
-DevOps Practices
-DevOps Tools
-Knowledge Check
-Summary
+ - Module Overview
+ - DevOps Culture
+ - DevOps Practices
+ - DevOps Tools
+ - Knowledge Check
+ - Summary
 
 
-- Module 3: Amazon’s DevOps Transformation
+- Module 3: Amazon’s DevOps     Transformation
 
-Module Overview
-Amazon’s DevOps Transformation
-Summary
+ - Module Overview
+ - Amazon’s DevOps Transformation
+ - Summary
 
 
 - Module 4: AWS DevOps Tools
 
-Module Overview
-AWS DevOps Tools
-Knowledge Check
-Summary
+ - Module Overview
+ - AWS DevOps Tools
+ - Knowledge Check
+ - Summary
 
 
 - Module 5: AWS and DevOps Demo
 
-Module Overview
-Demo: Create and Control a CI/CD Pipeline
-Summary
+ - Module Overview
+ - Demo: Create and Control a CI/CD  - Pipeline
+ - Summary
