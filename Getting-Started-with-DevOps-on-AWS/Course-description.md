@@ -43,7 +43,7 @@ General Cloud Computing Knowledge
 
 
 ## Course outline
-- Module 1: Introduction to DevOps
+### Module 1: Introduction to DevOps
 
  - Module Overview
  - What is DevOps?
@@ -53,7 +53,7 @@ General Cloud Computing Knowledge
  - Summary
 
 
-- Module 2: DevOps Methodology
+### Module 2: DevOps Methodology
 
  - Module Overview
  - DevOps Culture
@@ -63,14 +63,14 @@ General Cloud Computing Knowledge
  - Summary
 
 
-- Module 3: Amazon’s DevOps     Transformation
+### Module 3: Amazon’s DevOps     Transformation
 
  - Module Overview
  - Amazon’s DevOps Transformation
  - Summary
 
 
-- Module 4: AWS DevOps Tools
+### Module 4: AWS DevOps Tools
 
  - Module Overview
  - AWS DevOps Tools
@@ -78,7 +78,7 @@ General Cloud Computing Knowledge
  - Summary
 
 
-- Module 5: AWS and DevOps Demo
+### Module 5: AWS and DevOps Demo
 
  - Module Overview
  - Demo: Create and Control a CI/CD  - Pipeline
