@@ -9,3 +9,7 @@ Use script to manage automatically infrastructure and provide solutions for:
 - Reduce human mistake
 - Improve productivities for repeating tasks.
 
+Steps to implement Infra as code: 
+
+<img width="722" alt="IAC" src="https://github.com/user-attachments/assets/6bf6b2eb-69be-477c-9771-029a571c1fa8" />
+
