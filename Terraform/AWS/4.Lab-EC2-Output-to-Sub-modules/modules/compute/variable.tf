@@ -14,16 +14,11 @@ variable "instance_type" {
   description = "The type of instance to start."
   default = "t3.micro"
 }
+
 variable "ami_map" {
   type = map(any)
   default = {
     eu-north-1 = "ami-016038ae9cc8d9f51"
     eu-central-1 = "ami-06ee6255945a96aba"
   }
-}
-
-variable "keypair_path" {
-  type        = string
-  default = "../keypair/udemy-keypair.pub"
-  
 }
