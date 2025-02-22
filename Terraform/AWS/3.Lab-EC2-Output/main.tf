@@ -6,7 +6,7 @@ provider "aws" {
   region = var.region
 }
 
-resource "aws_instance" "example" {
+resource "aws_instance" "demo-instance" {
   ami           = var.ami_map[var.region] # dynamic AMI ID based on region
   instance_type = var.instance_type
 
@@ -19,7 +19,7 @@ resource "aws_eip" "demo-eip" {           # Difine Elastic IP - (static IP)
   instance = aws_instance.demo-instance.id
 }
 
-resource "aws_security_group" "example" {
+resource "aws_security_group" "example-security-group" {
     name        = "example-security-group"
     description = "Allow inbound traffic on ports 443, 80, 22, and 3306"
     vpc_id      = "vpc-0a70dc636b76d36ea" # Replace with your VPC ID
