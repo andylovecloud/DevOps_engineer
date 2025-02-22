@@ -1,7 +1,7 @@
 # Introduction
-- **Provider**: HashiCorp
+- **Provider**: [HashiCorp](https://developer.hashicorp.com/terraform)
 - **Language**: HashiCorp Configuration Language (HCL).
-- **Support** cloud provider: AWS, GCP, Azure,...
+- **Support** cloud provider: [AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started), GCP, Azure,...
 
 ## Mechanism of operation
 
