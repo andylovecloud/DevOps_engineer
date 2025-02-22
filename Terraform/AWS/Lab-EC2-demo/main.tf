@@ -51,14 +51,3 @@ resource "aws_security_group" "example" {
     }
 }
 
-# resource "aws_instance" "example" {
-#     ami           = "ami-0d5d9d301c853a04a"
-#     instance_type = "t2.micro"
-
-#     tags = {
-#         Name = "example-EC2-instance"
-#     }
-
-#     vpc_security_group_ids = [aws_security_group.example.id]
-# }
-
