@@ -5,3 +5,6 @@
 3. Use Output to link between 2 modules.
 4. Deploy AWS resources using modules
 *Note*: this lab still uses default -vpc
+
+
+<img width="1224" alt=" Terraform-Output-to-Sub-modules" src="https://github.com/user-attachments/assets/2f1472c4-60bc-4830-9069-607f1a736493" />
