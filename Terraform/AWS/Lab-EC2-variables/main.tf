@@ -7,7 +7,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "example" {
-  ami           = var.image_id # Ubuntu AMI ID for eu-north-1 region
+  ami           = var.ami_map[var.region] # dynamic AMI ID based on region
   instance_type = var.instance_type
 
   tags = {
@@ -17,7 +17,7 @@ resource "aws_instance" "example" {
 resource "aws_security_group" "example" {
     name        = "example-security-group"
     description = "Allow inbound traffic on ports 443, 80, 22, and 3306"
-    vpc_id      = "vpc-12345678" # Replace with your VPC ID
+    vpc_id      = "vpc-0a70dc636b76d36ea" # Replace with your VPC ID
 
     ingress {
         from_port   = 443
