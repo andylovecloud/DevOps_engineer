@@ -22,3 +22,5 @@
 4. **Destroy (terraform destroy)**: Destroy and delete Infrastructure. Delete all resources, _**only use when nescessary**_! (lab/dev/test)
 
 <img width="414" alt="Terraform-implementation" src="https://github.com/user-attachments/assets/04a3a12d-b7a9-43b1-aa98-b8b4ff274ce1" />
+
+**[Link to Terraform templates reference AWS](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/launch_template)**
