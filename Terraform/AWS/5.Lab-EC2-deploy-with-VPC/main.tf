@@ -1,43 +1,14 @@
-# 1. Create a new file named main.tf in the Terraform/AWS/4.Lab-EC2-Output-to-Sub-modules directory.
-# provider "aws" {
-#   region = var.region
-# }
-# resource "aws_key_pair" "udemy-keypair" {
-#   key_name   = "udemy-keypair"
-#   public_key = file(var.keypair_path)
-#   }
-
-# module "security" {
-#   source = "./module/security"
-#   region = var.region
-# }
-# module "compute" {
-#   source = "./modules/compute"
-#   region = var.region
-#   image_id = var.ami_map[var.region]  
-#   instance_type = var.instance_type
-#   key_name = aws_key_pair.udemy-keypair.key_name
-#   ec2_security_group_ids = [module.security.security_group_id]
-# }
-
 provider "aws" {
   region = var.region
 }
 
-resource "aws_key_pair" "udemy-keypair" {
-  key_name   = "udemy-key"
-  public_key = file(var.keypair_path)
-}
-
-module "security" {
-  source = "./modules/security"
+#Create a complete VPC using module networking
+module "networking" {
+  source = "./modules/networking"
   region = var.region
-}
-module "compute" {
-  source = "./modules/compute"
-  region = var.region
-  image_id = var.ami_map[var.region]
-  key_name = aws_key_pair.udemy-keypair.key_name
-  instance_type = var.instance_type
-  ec2_security_group_ids = [module.security.public_security_group_id]
+  availability_zone_1 = var.availability_zone_1
+  availability_zone_2 = var.availability_zone_2
+  cidr_block = var.cidr_block
+  public_subnet_ips = var.public_subnet_ips
+  private_subnet_ips = var.private_subnet_ips
 }
