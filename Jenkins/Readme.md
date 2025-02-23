@@ -14,17 +14,16 @@ Jenkins allows you to create jobs to perform tasks such as **building source, ru
 - **Community support**: Jenkins has a large and active community, with many resources, tutorials, and forums to help users solve problems and share experiences.
 
 ## Instructions for installing Jenkins on EC2 (Ubuntu)
-• Create an EC2 instance with Ubuntu AMI.
-• Log in to the EC2 instance. (security group allow port 8080)
-• Install Jenkins according to the following guide:
-https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
-• Log in to Jenkins with the admin password,
-• Install the plugins as recommended.
-• Change the admin password.
+- Create an EC2 instance with Ubuntu AMI.
+- Log in to the EC2 instance. (security group allow port 8080)
+- Install Jenkins according to the following guide: https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
+- Log in to Jenkins with the admin password.
+- Install the plugins as recommended.
+- Change the admin password.
 
 Overview diagram after installed jenkins:
 <img width="782" alt="Jenkins-installation" src="https://github.com/user-attachments/assets/77b3f163-df1f-472a-a9f4-4ff90ac6d2ab" />
 
-• From local machine connect to jenkins dashboard port 8080
-• Local machine can ssh into jenkins (for debug tasks).
-• Jenkins can pre-install CICD tools such as Java, Maven, AWS, Git, Sonar,Nexus.
+- From local machine connect to jenkins dashboard port 8080
+- Local machine can ssh into jenkins (for debug tasks).
+- Jenkins can pre-install CICD tools such as Java, Maven, AWS, Git, Sonar,Nexus.
