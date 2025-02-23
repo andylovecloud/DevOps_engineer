@@ -1,10 +1,14 @@
 
-# Use Terraform Output to link sub-modules
-1. Introduction to how to divide modules, organize folders.
-2. Divide resources in the previous lab into 2 modules: security and compute.
-3. Use Output to link between 2 modules.
-4. Deploy AWS resources using modules
-*Note*: this lab still uses default -vpc
+# Practice deploying a complete VPC + resources
+1. Practice creating and deploying a complete VPC with the following components:
+• 2 public subnets, 2 private subnets
+• Public route table, Private route table
+• 1 Internet Gateway, 1 NAT Gateway
+• Check the created resources.
+*Note* using the module to separate into a separate networking module
+2. Deploy additional *security + compute* module after the *networking* module is successfully deployed.
+• Security Group receives vpc id taken from the *networking* module output
+• EC2 receives Security Group ID taken from the *security* module output
 
 
 <img width="1224" alt=" Terraform-Output-to-Sub-modules" src="https://github.com/user-attachments/assets/2f1472c4-60bc-4830-9069-607f1a736493" />
