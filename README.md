@@ -37,4 +37,8 @@ Steps to implement Infra as code:
 - **Puppet**: agent-master model, install in all host machines. Use SSL to connect and manage servers. Code in private DSL(Domain Specific Language) of Puppet and Ruby.
 - **Chef**: client-server model, install client in all servers. Use SSL to connect and manage servers. Use Ruby DSL to write recipes and cookbooks.
 
+![CICD-concepts](https://github.com/user-attachments/assets/b2b91224-10ae-4c11-a01e-a4ea17285cc2)
+
+
+
 
