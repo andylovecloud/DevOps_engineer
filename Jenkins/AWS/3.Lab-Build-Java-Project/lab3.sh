@@ -32,5 +32,16 @@ clean install
 #Add more IAM Role for Jenkins, add policy "S3FullAccess"
 
 #Add more step upload to S3
+
+
+#Install unzip
+sudo apt install unzip
+
+#Install AWS CLI
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+
 #Shell script
-aws s3 cp "${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar" "s3://udemy-jenkins-linh/jenkins/${BUILD_ID}/"
+aws s3 cp "${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar" "s3://udemy-jenkins-andylab3/jenkins/${BUILD_ID}/"
