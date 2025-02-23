@@ -29,13 +29,26 @@ Overview diagram after installed jenkins:
 - Jenkins can pre-install CICD tools such as Java, Maven, AWS, Git, Sonar,Nexus.
 
 ## Jenkins CI/CD Concept
-- Basically a Jenkins CI job will have the following structure:
+
+Basically a Jenkins CI job will have the following structure:
 1. Checkout source code
 2. Build
 3. Test
 4. Push Artifact to target
 
-<img width="892" alt="Jenkins-CI-CD-concept" src="https://github.com/user-attachments/assets/9265b878-d04a-439b-96ac-ba23b087f33d" />
+<img width="892" alt="Jenkins-CI-concept" src="https://github.com/user-attachments/assets/42c1e374-5de5-4aa7-a385-dc65a75e5b9f" />
+
+
+And a Jenkins CD job will have one or a combination of the following actions:
+- Deploy package to EC2, Beanstalk
+- Deploy package to ECS, EKS
+- Deploy package to S3, Clear cache on CloudFront.
+- Trigger rollout on ECS, EKS Cluster.
+- Switch version on ALB (Blue/Green deployment).
+- Trigger Canary deployment combined with CodeDeploy.
+- ...other actions depending on the platform.
+
+<img width="851" alt="Jenkins-CD-concept png" src="https://github.com/user-attachments/assets/3bd7cb3a-f589-4978-abba-450756d3c5ba" />
 
 
 
