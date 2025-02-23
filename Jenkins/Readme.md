@@ -27,3 +27,15 @@ Overview diagram after installed jenkins:
 - From local machine connect to jenkins dashboard port 8080
 - Local machine can ssh into jenkins (for debug tasks).
 - Jenkins can pre-install CICD tools such as Java, Maven, AWS, Git, Sonar,Nexus.
+
+## Jenkins CI/CD Concept
+- Basically a Jenkins CI job will have the following structure:
+1. Checkout source code
+2. Build
+3. Test
+4. Push Artifact to target
+
+<img width="892" alt="Jenkins-CI-CD-concept" src="https://github.com/user-attachments/assets/9265b878-d04a-439b-96ac-ba23b087f33d" />
+
+
+
