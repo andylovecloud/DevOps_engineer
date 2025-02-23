@@ -1,33 +1,30 @@
 variable "region" {
-  type        = string
-  description = "The AWS region to launch the instance."
-  default = "eu-north-1"
+  type = string
+  default = "ap-southeast-1"
 }
 
 variable "image_id" {
   type        = string
   description = "The id of the machine image (AMI) to use for the server."
 }
-
+variable "key_name" {
+  type = string
+  description = "name of the keypair to use for the instance"
+  nullable = false
+}
 variable "instance_type" {
   type        = string
-  description = "The type of instance to start."
+  description = "Type of EC2 instance to launch. Example: t2.micro"
   default = "t3.micro"
 }
 
-variable "ami_map" {
-  type = map(any)
-  default = {
-    eu-north-1 = "ami-016038ae9cc8d9f51"
-    eu-central-1 = "ami-06ee6255945a96aba"
-  }
+variable "subnet_id" {
+  type = string
+  description = "The subnet ID to launch in"
+  nullable = false
 }
 
 variable "ec2_security_group_ids" {
-  description = "List of security group IDs to associate with"
-  type        = list(string)
-}
-variable "key_name" {
-  description = "The key name to use for the instance"
-  type        = string
+  type = list(string)
+  nullable = false
 }
