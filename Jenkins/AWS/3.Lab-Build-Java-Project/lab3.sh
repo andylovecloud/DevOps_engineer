@@ -19,7 +19,7 @@ java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home'
 Buildjob3-simple-Java-project
 
 #Link git hub repo:
-https://github.com/hoanglinhdigital/simple-java-maven-app.git
+https://github.com/andylovecloud/simple-java-maven-app.git
 
 #Branch:
 */main
