@@ -7,4 +7,5 @@
 *Note*: this lab still uses default -vpc
 
 
-<img width="1224" alt=" Terraform-Output-to-Sub-modules" src="https://github.com/user-attachments/assets/2f1472c4-60bc-4830-9069-607f1a736493" />
+
+<img width="1209" alt=" Terraform-Output-to-Sub-modules-with-VPC" src="https://github.com/user-attachments/assets/ab714d60-08eb-47d1-9b0e-8d58760a8934" />
