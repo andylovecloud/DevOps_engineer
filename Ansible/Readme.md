@@ -61,9 +61,9 @@
 - Users can also write their own modules. These modules can control system resources, like services, packages, or files (anything really), or handle executing system commands. https://docs.ansible.com/ansible/2.9/modules/list_of_all_modules.html
 
 ### Ansible role:
-- An Ansible role is a reusable and self-contained "unit" of automation in Ansible. Roles are designed to simplify and encapsulating specific functionality and configuration into modular components. Roles can be thought of as building blocks that can be stacked together to build complex automation workflows.
-- Roles are also a way of organizing your playbooks. Roles are defined using YAML files with a predefined directory structure. Roles can be downloaded from Ansible Galaxy or created by yourself.
-- Jeff Geerling is really active of making roles : https://ansible.jeffgeerling.com/
 
-<img width="483" alt="Ansible-roles" src="https://github.com/user-attachments/assets/5971880a-4baf-4d7a-860d-b647b742aa0f" />
+| Basic idea         | Example       |
+|---------------     |-------------- |
+|- An Ansible role is a reusable and self-contained "unit" of automation in Ansible. Roles are designed to simplify and encapsulating specific functionality and configuration into modular components. Roles can be thought of as building blocks that can be stacked together to build complex automation workflows. <br> - Roles are also a way of organizing your playbooks. Roles are defined using YAML files with a predefined directory structure. Roles can be downloaded from Ansible Galaxy or created by yourself. <br> - Jeff Geerling is really active of making roles : https://ansible.jeffgeerling.com/ | <img width="483" alt="Ansible-roles" src="https://github.com/user-attachments/assets/5971880a-4baf-4d7a-860d-b647b742aa0f" /> |
+
 
