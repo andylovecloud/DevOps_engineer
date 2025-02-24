@@ -25,8 +25,7 @@
 |---------------     |-------------- |
 |**Centralized workflow**: Suitable for small projects, simple codebase. Developer clones repository to local machine, makes changes then pushes back to central repository.<br> _**Disadvantage**_: easy to cause conflicts when many people edit the same module or file. | <img width="488" alt="Git-Centralized-worklife-models" src="https://github.com/user-attachments/assets/a8548db1-8e06-4c7e-82ff-90cd067f6d98" />|
 |**Feature Branch workflow**: Whenever a developer develops a new feature, they will create a separate branch from the main branch. After finishing the work, they will create a pull-request to merge back. | <img width="736" alt="Git-feature-branch-workflow" src="https://github.com/user-attachments/assets/fe0f1bbe-7c84-4746-bee3-2ef7949151fe" />|
-
-
+|**Gitflow workflow**: Suitable for large projects, complex codebases, with long development time. <br> This model divides branches into brancheswith different tasks such as: <br> **main:** the main branch maintained throughout the project's lifecycle. Code can only be merged into it when there is a major release or hot-fix. Tagged according to the release version. <br> - **develop**: the branch used by developers to develop feature/fix-bug. Code is checked out from here and merged back when the task is completed.<br> - **feature-***: naming rule depends on the project. eg feature-<ticket-id>. Checkout from the develop branch. <br> - **bugfix-***: similar to the feature branch, used to fix bugs. <br> - **release**: created before each new release version, code is usually deployed to the test/staging environment, can make minor edits (optional).| <img width="808" alt="Gitflow-workflow" src="https://github.com/user-attachments/assets/43c3407f-ca61-48d0-bacc-cfe8bd326448" />|
 
 
 
