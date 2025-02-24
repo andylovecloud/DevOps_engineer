@@ -1,22 +1,17 @@
 # Introduction
-- Ansible is a suite of software tools that enables infrastructure as code. Originally written by Michael DeHaan and acquired by Red Hat in 2015
-- It is an open source project… For now…
-- Ansible is a configuration management tool that can be used to manage the configuration of servers and other devices in an infrastructure.
-- It can also be used to deploy applications and services to those servers. 
-- Ansible can also be used to manage network devices. Also some cloud providers like AWS, Azure and Google Cloud Platform can be managed with Ansible.
 
-<img width="385" alt="Ansible-logo" src="https://github.com/user-attachments/assets/1f9c7031-44d4-4642-a99d-4ae02df23a10" />
-
+|       |        |
+|---------------     |-------------- |
+| - Ansible is a suite of software tools that enables infrastructure as code. Originally written by Michael DeHaan and acquired by Red Hat in 2015. <br> - It is an open source project… For now… <br>- Ansible is a configuration management tool that can be used to manage the configuration of servers and other devices in an infrastructure. <br> - It can also be used to deploy applications and services to those servers. <br> - Ansible can also be used to manage network devices. Also some cloud providers like AWS, Azure and Google Cloud Platform can be managed with Ansible. | <img width="385" alt="Ansible-logo" src="https://github.com/user-attachments/assets/1f9c7031-44d4-4642-a99d-4ae02df23a10" />|
+||**[Getting started with Ansible](https://docs.ansible.com/ansible/latest/getting_started/index.html#getting-started-with-ansible)** |
 
 **Homepage**: https://docs.ansible.com/
 
 ## Ansible and GUI
+|          |        |
+|---------------     |-------------- |
+|- Ansible Tower (GUI) part of an annual RedHat Ansible Automation Platform subscription. <br> - Ansible Tower is based on https://github.com/ansible/awx and that version is Free and open source. <br>- There is alternative GUI to Ansible like https://github.com/ansiblesemaphore/semaphore. | <img width="590" alt="Ansible-GUI" src="https://github.com/user-attachments/assets/17bf56f7-faea-4cf6-b839-da7cc6743637" /> |
 
-- Ansible Tower (GUI) part of an annual RedHat Ansible Automation Platform subscription
-- Ansible Tower is based on https://github.com/ansible/awx and that version is Free and open source
-- There is alternative GUI to Ansible like https://github.com/ansiblesemaphore/semaphore.
-
-<img width="590" alt="Ansible-GUI" src="https://github.com/user-attachments/assets/17bf56f7-faea-4cf6-b839-da7cc6743637" />
 
 
 ## Ansible concept:
