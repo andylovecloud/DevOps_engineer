@@ -12,7 +12,6 @@
 
 ## Git architecture
 
-|          |        |
 |---------------     |-------------- |
 |- **GitRepository**: where all code files, folders, project history are stored. The repository can be located on a local machine, server, or on the Cloud. <br> <br> - **Commit**: a snapshot of the codebase at a specific point in time.<br> <br> - **Branch**: a separate line created from a commit of the codebase. <br> <br> - **Merge**: combine a branch into another branch.|<img width="736" alt="Git-architecture" src="https://github.com/user-attachments/assets/3ea21182-eb4c-406a-8b37-7582fcb21718" />|
 
