@@ -16,3 +16,11 @@ part 2:
 - Rebuild and check the war package uploaded to S3.
 
 **Note**: Jenkins server must have the necessary IAM role to upload to s3.
+
+part 3:
+
+## Build Java Project (Declarative version)
+Requirements:
+• Reuse Buildjob3 repository.
+• Create a new job with Pipeline syntax.
+• Configure 3 steps: checkout code, build, upload artifact to S3.
