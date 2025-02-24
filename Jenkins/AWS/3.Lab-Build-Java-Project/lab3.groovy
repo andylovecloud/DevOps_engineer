@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'M3'
+        maven 'Maven3'
     }
 
     stages {
@@ -20,7 +20,7 @@ pipeline {
         stage('Upload Artifacts') {
             steps {
                 // Upload the artifact to S3
-                sh 'aws s3 cp ${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar s3://udemy-jenkins-linh/buildjob3/${BUILD_ID}/'
+                sh 'aws s3 cp ${WORKSPACE}/target/my-app-1.0-SNAPSHOT.jar s3://udemy-jenkins-andylab3/jenkins/${BUILD_ID}/'
             }
         }
     }
