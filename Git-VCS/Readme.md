@@ -27,6 +27,13 @@
 |**Feature Branch workflow**: Whenever a developer develops a new feature, they will create a separate branch from the main branch. After finishing the work, they will create a pull-request to merge back. | <img width="736" alt="Git-feature-branch-workflow" src="https://github.com/user-attachments/assets/fe0f1bbe-7c84-4746-bee3-2ef7949151fe" />|
 |**Gitflow workflow**: Suitable for large projects, complex codebases, with long development time. <br> This model divides branches into brancheswith different tasks such as: <br> **main:** the main branch maintained throughout the project's lifecycle. Code can only be merged into it when there is a major release or hot-fix. Tagged according to the release version. <br> - **develop**: the branch used by developers to develop feature/fix-bug. Code is checked out from here and merged back when the task is completed.<br> - **feature-***: naming rule depends on the project. eg feature-<ticket-id>. Checkout from the develop branch. <br> - **bugfix-***: similar to the feature branch, used to fix bugs. <br> - **release**: created before each new release version, code is usually deployed to the test/staging environment, can make minor edits (optional).| <img width="808" alt="Gitflow-workflow" src="https://github.com/user-attachments/assets/43c3407f-ca61-48d0-bacc-cfe8bd326448" />|
 
+## Gitflow workflow – Mapping between branches and deployment environments
 
+- **Dev environment**: usually deployed automatically when a pull request is merged into the develop branch (CICD).
+- **Test environment**: used for Integration Testing, usually released according to the version from the release branch.
+- **Staging environment**: used for System Testing & UAT activities before releasing to end-users. Basically, the Staging mt must be the same as the Production environment.
+- When applying Hotfix, it is recommended to test first with the Staging environment before applying merge to the main and deploying to Production.
 
+<img width="743" alt="Gitflow-workflow-mapping-braches" src="https://github.com/user-attachments/assets/caa6ada7-c8df-427a-bde2-5bd3e72aed40" />
 
+**_Note_**:_ the above mapping rules are for reference only and can be completely customized depending on the project scale and customer requirements. However, breaking the standard deployment flow, applying too many hot-fixes, and releasing without testing will reduce the project quality and cost a lot of effort to fix._
