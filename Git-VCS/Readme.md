@@ -37,3 +37,10 @@
 <img width="743" alt="Gitflow-workflow-mapping-braches" src="https://github.com/user-attachments/assets/caa6ada7-c8df-427a-bde2-5bd3e72aed40" />
 
 **_Note_**: _the above mapping rules are for reference only and can be completely customized depending on the project scale and customer requirements. However, breaking the standard deployment flow, applying too many hot-fixes, and releasing without testing will reduce the project quality and cost a lot of effort to fix._
+
+## Some Git service providers:
+
+<img width="1334" alt="Git-service-providers" src="https://github.com/user-attachments/assets/f7b8de41-04df-47a4-9416-e944923d606f" />
+
+
+
