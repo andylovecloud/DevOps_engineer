@@ -21,8 +21,8 @@
 
 ## Ansible concept
 | Basic idea         | Example       |
-|--------------- |----------------   |
-| We have a control Node with a SSH login information and Ansible software. <br>Control node will connect to other nodes (computers etc) and send needed configurations |<img width="506" alt="Ansible-basic-idea" src="https://github.com/user-attachments/assets/87f60426-8bd6-4681-b935-5aa76ac9b34a" />|
+|---------------     |-------------- |
+| - We have a control Node with a SSH login information and Ansible software. <br><br> - Control node will connect to other nodes (computers etc) and send needed configurations |<img width="506" alt="Ansible-basic-idea" src="https://github.com/user-attachments/assets/87f60426-8bd6-4681-b935-5aa76ac9b34a" />|
 ||**[Getting started with Ansible](https://docs.ansible.com/ansible/latest/getting_started/index.html#getting-started-with-ansible)** |
   
 
@@ -30,14 +30,13 @@
 
 ### Main structure:
 - Ansible main structure can be divided to 4 different structures:
-**1. Inventory**
-**2. Playbooks
-3. Roles
-4. Modules / Plugins
-**
-- We will also need credentials to log in to servers
 
-<img width="535" alt="Ansible-structure" src="https://github.com/user-attachments/assets/0b81a345-f854-483e-85c6-ccde4c36d2a6" />
+| Basic idea         | Example       |
+|---------------     |-------------- |
+|1. Inventory. <br> 2. Playbooks <br>3. Roles <br>4. Modules / Plugins <br> - We will also need credentials to log in to servers    | <img width="535" alt="Ansible-structure" src="https://github.com/user-attachments/assets/0b81a345-f854-483e-85c6-ccde4c36d2a6" /> |
+
+
+
 
 ### Ansible Inventory:
 - Ansible Inventory is saving the connection information to nodes (servers) that are managed by Ansible.
@@ -49,9 +48,12 @@
 
 
 ### Ansible Playbooks
-- Playbooks are automation blueprints, in YAML format, that Ansible uses to deploy and configure nodes in an inventory.
 
-<img width="457" alt="Ansible-Playbook" src="https://github.com/user-attachments/assets/af92f519-0dbd-4546-b832-e3279978a666" />
+| Basic idea         | Example       |
+|---------------     |-------------- |
+|Playbooks are automation blueprints, in YAML format, that Ansible uses to deploy and configure nodes in an inventory.  | <img width="457" alt="Ansible-Playbook" src="https://github.com/user-attachments/assets/af92f519-0dbd-4546-b832-e3279978a666" /> |
+
+
 
 
 ### Ansible Modules:
