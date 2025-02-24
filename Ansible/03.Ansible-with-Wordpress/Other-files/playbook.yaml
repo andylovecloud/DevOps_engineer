@@ -1,0 +1,94 @@
+#Ansible_Docker_Wordpress
+---
+- hosts: google
+  become: true
+  vars:
+    wordpress_container_name: wordpress
+    wordpress_container_image: wordpress:latest
+    mysql_container_name: mysql
+    mysql_container_image: mysql:lts
+    mysql_root_password: examplepassword
+    wordpress_db_name: wordpress_db
+    wordpress_db_user: wordpress_user
+    wordpress_db_password: wordpress_password
+
+  tasks:
+    - name: Install aptitude
+      apt:
+        name: aptitude
+        state: latest
+        update_cache: true
+
+    - name: Install required system packages
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - software-properties-common
+          - python3-pip
+          - virtualenv
+          - python3-setuptools
+        state: latest
+        update_cache: true
+
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu jammy stable
+        state: present
+
+    - name: Update apt and install docker-ce
+      apt:
+        name: docker-ce
+        state: latest
+        update_cache: true
+
+    - name: Create a Docker network for WordPress and MySQL
+      community.docker.docker_network:
+        name: wordpress_network
+        state: present
+
+    - name: Pull MySQL Docker image
+      community.docker.docker_image:
+        name: "{{ mysql_container_image }}"
+        source: pull
+
+    - name: Create MySQL container
+      community.docker.docker_container:
+        name: "{{ mysql_container_name }}"
+        image: "{{ mysql_container_image }}"
+        env:
+          MYSQL_ROOT_PASSWORD: "{{ mysql_root_password }}"
+          MYSQL_DATABASE: "{{ wordpress_db_name }}"
+          MYSQL_USER: "{{ wordpress_db_user }}"
+          MYSQL_PASSWORD: "{{ wordpress_db_password }}"
+        networks:
+          - name: wordpress_network
+        state: started
+        restart_policy: always
+
+    - name: Pull WordPress Docker image
+      community.docker.docker_image:
+        name: "{{ wordpress_container_image }}"
+        source: pull
+
+    - name: Create WordPress container
+      community.docker.docker_container:
+        name: "{{ wordpress_container_name }}"
+        image: "{{ wordpress_container_image }}"
+        env:
+          WORDPRESS_DB_HOST: "{{ mysql_container_name }}:3306"
+          WORDPRESS_DB_NAME: "{{ wordpress_db_name }}"
+          WORDPRESS_DB_USER: "{{ wordpress_db_user }}"
+          WORDPRESS_DB_PASSWORD: "{{ wordpress_db_password }}"
+        ports:
+          - "80:80"
+        networks:
+          - name: wordpress_network
+        state: started
+        restart_policy: always
