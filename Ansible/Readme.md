@@ -19,7 +19,7 @@
 <img width="590" alt="Ansible-GUI" src="https://github.com/user-attachments/assets/17bf56f7-faea-4cf6-b839-da7cc6743637" />
 
 
-## Ansible concept
+## Ansible concept:
 | Basic idea         | Example       |
 |---------------     |-------------- |
 | - We have a control Node with a SSH login information and Ansible software. <br><br> - Control node will connect to other nodes (computers etc) and send needed configurations |<img width="506" alt="Ansible-basic-idea" src="https://github.com/user-attachments/assets/87f60426-8bd6-4681-b935-5aa76ac9b34a" />|
@@ -39,15 +39,15 @@
 
 
 ### Ansible Inventory:
-- Ansible Inventory is saving the connection information to nodes (servers) that are managed by Ansible.
-- The inventory can be defined in a static file (JSON or Init) and it can be generated dynamically in various structures
-- Ansible can get inventory information from other software like Terraform
-
-<img width="420" alt="Ansible-inventory" src="https://github.com/user-attachments/assets/fddb3c22-2dc3-45f3-8f09-d0ed241655f8" />
+| Basic idea         | Example       |
+|---------------     |-------------- |
+| - Ansible Inventory is saving the connection information to nodes (servers) that are managed by Ansible. <br>- The inventory can be defined in a static file (JSON or Init) and it can be generated dynamically in various structures. <br> - Ansible can get inventory information from other software like Terraform.  |<img width="420" alt="Ansible-inventory" src="https://github.com/user-attachments/assets/fddb3c22-2dc3-45f3-8f09-d0ed241655f8" />|
 
 
 
-### Ansible Playbooks
+
+
+### Ansible Playbooks:
 
 | Basic idea         | Example       |
 |---------------     |-------------- |
