@@ -61,4 +61,17 @@
 |---------------     |-------------- |
 |- An Ansible role is a reusable and self-contained "unit" of automation in Ansible. Roles are designed to simplify and encapsulating specific functionality and configuration into modular components. Roles can be thought of as building blocks that can be stacked together to build complex automation workflows. <br><br> - Roles are also a way of organizing your playbooks. Roles are defined using YAML files with a predefined directory structure. Roles can be downloaded from Ansible Galaxy or created by yourself. <br><br> - Jeff Geerling is really active of making roles : https://ansible.jeffgeerling.com/ <br>| <img width="483" alt="Ansible-roles" src="https://github.com/user-attachments/assets/5971880a-4baf-4d7a-860d-b647b742aa0f" /> |
 
+-----------------------
 
+```
+ _______________________________________
+/ A doctor can bury his mistakes but an \
+| architect can only advise his clients |
+\ to plant vines. (Frank Lloyd Wright)  /
+ ---------------------------------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+```
