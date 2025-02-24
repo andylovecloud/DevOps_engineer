@@ -20,6 +20,11 @@
 |---------------     |-------------- |
 |1. **Create**: Create a new repository on your local machine or on a remote server. <br><br> 2. **Modify**: add additional code files using IDEs. Git will automatically detect the changes. <br><br> 3. **Stage**: use the git add command to prepare changes to be committed to the repository. <br><br> 4. **Commit**: Apply changes to the repository. <br><br> 5. **Push**: push changes from the local repository to another repository (eg Github, corporate Git server). | <img width="608" alt="Git-life-cycle" src="https://github.com/user-attachments/assets/30c74260-5172-4869-9067-f2d2480e6e1a" />|
 
+## Some Workflow models:
+|                    |               |
+|---------------     |-------------- |
+|**Centralized workflow**: Suitable for small projects, simple codebase. Developer clones repository to local machine, makes changes then pushes back to central repository.<br> _**Disadvantage**_: easy to cause conflicts when many people edit the same module or file. | <img width="488" alt="Git-Centralized-worklife-models" src="https://github.com/user-attachments/assets/a8548db1-8e06-4c7e-82ff-90cd067f6d98" />|
+|**Feature Branch workflow**: Whenever a developer develops a new feature, they will create a separate branch from the main branch. After finishing the work, they will create a pull-request to merge back. | <img width="736" alt="Git-feature-branch-workflow" src="https://github.com/user-attachments/assets/fe0f1bbe-7c84-4746-bee3-2ef7949151fe" />|
 
 
 
