@@ -20,11 +20,10 @@
 
 
 ## Ansible concept
-### Basic idea:
-| Definition         | Example       |
+| Basic idea         | Example       |
 |--------------- |----------------   |
-| We have a control Node with a SSH login information and Ansible software |<img width="506" alt="Ansible-basic-idea" src="https://github.com/user-attachments/assets/87f60426-8bd6-4681-b935-5aa76ac9b34a" />|
-|Control node will connect to other nodes (computers etc) and send needed configurations |**[Getting started with Ansible](https://docs.ansible.com/ansible/latest/getting_started/index.html#getting-started-with-ansible)** |
+| We have a control Node with a SSH login information and Ansible software. <br>Control node will connect to other nodes (computers etc) and send needed configurations |<img width="506" alt="Ansible-basic-idea" src="https://github.com/user-attachments/assets/87f60426-8bd6-4681-b935-5aa76ac9b34a" />|
+||**[Getting started with Ansible](https://docs.ansible.com/ansible/latest/getting_started/index.html#getting-started-with-ansible)** |
   
 
 
