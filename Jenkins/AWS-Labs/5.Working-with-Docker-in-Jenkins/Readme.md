@@ -23,7 +23,7 @@ You might find this error while run "Build Now" after input the Ruby script (whi
 
 ![Lab5 10-Error-While-Build-Code-in-Jenkins](https://github.com/user-attachments/assets/0d29ce22-1c30-4a83-9b65-ec923ff9d14a)
 
-That mean your AWSCLi does not exist / install. then you can do the following:
+That mean your AWSCLi does not exist / install. then you can do the following steps and run the "build now" again:
 1. Update package lists:
 ```
 sudo apt update
