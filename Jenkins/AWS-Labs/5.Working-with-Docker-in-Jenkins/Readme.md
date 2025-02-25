@@ -5,8 +5,10 @@ Proceed to install Docker & Docker compose for Jenkins:
 - https://docs.docker.com/engine/install/ubuntu/
 - https://docs.docker.com/compose/install/linux/
 - add step to add group of docker
->sudo usermod -a -G docker jenkins
->sudo systemctl restart jenkins
+
+### Trouble shoot error Permission denied, run the following commands in remote server
+sudo usermod -a -G docker jenkins
+sudo systemctl restart jenkins
 
 **Requirements**:
 - Create an ECR repository. Grant ECR permissions to the Jenkins server.
@@ -15,3 +17,6 @@ Proceed to install Docker & Docker compose for Jenkins:
 - Use nginx image to build a custom image.
 - Push the built image to ECR.
 - Check the result after build.
+
+### Troubleshoot while "Build Now" in Jenkins
+
