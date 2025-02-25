@@ -1,5 +1,5 @@
-# DevOps Introduction
-This is a clear starting point to help you build a DevOps Engineer career, or learn how to implement a solution in DevOps, this set of on-demand courses will help grow your technical skills for deploying, managing, and monitoring cloud applications in AWS as you review CI/CD pipelines, deployment methodologies, observability, and more.
+# Introduction about this repo
+This is a starting point for my journey to become a DevOps Engineer. Where I learn how to implement a solution in DevOps, via hand-on labs which improve my skills for deploying, managing, and monitoring cloud applications in AWS, Azure, GPC or review CI/CD pipelines, deployment methodologies, observability, and more.
 
 ## Definition
 - DevOps is a method in software development and infrastructure managememnt with the collaboration between Development(Dev) and Opeation team (Ops). DevOps aims to improve the software development lifecycle  by enhance the quality of product, speedup the CI/CD process and reduce mistake while implementatin. Adapt with change requests from customer easily and quickly.
