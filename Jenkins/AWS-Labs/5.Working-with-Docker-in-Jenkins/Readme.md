@@ -25,41 +25,37 @@ You might find this error while run "Build Now" after input the Ruby script (whi
 
 That mean your AWSCLi does not exist / install. then you can do the following:
 1. Update package lists:
-
-´´´
+```
 sudo apt update
-´´´
+```
 
 2. Install required dependencies:
-´´´
+```
 sudo apt install unzip curl -y
-
-´´´
+```
 
 3. Download AWS CLI installer:
-
-´´´
+```
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-´´´
+```
 
 4. Unzip the downloaded file:
-´´´
+```
 unzip awscliv2.zip
-´´´
+```
 
 5. Run the installer:
-
-´´´
+```
 sudo ./aws/install
-´´´
+```
 
 6. Verify the installation:
-´´´
+```
 aws --version
-´´´
+```
 
 7. If installed correctly, you should see an output like:
-´´´
+```
 aws-cli/2.x.x Python/x.x.x Linux/x86_64
-´´´
+```
 
