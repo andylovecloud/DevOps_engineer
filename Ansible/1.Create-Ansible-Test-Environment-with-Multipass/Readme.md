@@ -38,7 +38,8 @@ multipass shell node1
 multipass shell node2
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201082458-97b41058-5389-4301-b1e2-06a1b9d3a4ba.png)
+<img width="811" alt="Multipass-get-shell-controlnode" src="https://github.com/user-attachments/assets/50fb4348-e3cb-4c12-9423-3bf367c185a1" />
+
 
 ``` 
 sudo apt update
