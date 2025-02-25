@@ -44,21 +44,21 @@ ansible-playbook --ask-become-pass install_apache.yml
 
 - Under Task "install apache2 package", status are changed, this means installing apache2 packet on the nodes successfully
 
-![image](https://user-images.githubusercontent.com/10358317/201101843-efc4262d-5506-404e-b505-0d91131154df.png)
+<img width="937" alt="Ansible-install-apache-via-playbook" src="https://github.com/user-attachments/assets/28bb9e9d-7a60-4b5a-9837-346edd5d37e2" />
 
 - If you run again that command, it is seen that "ok" under the Task "install apache2 package", it means that there is no change
 
-![image](https://user-images.githubusercontent.com/10358317/201102379-69fe5e2b-7793-421d-add0-25d88b19b969.png)
+<img width="827" alt="Ansible-install-apache-via-playbook-again-no-change" src="https://github.com/user-attachments/assets/87295d02-fce1-46ab-870a-89037231ec1d" />
 
 - When you enter the one of the nodes' IP on the browser, you can see that the apache2 server is installed on it
 
-![image](https://user-images.githubusercontent.com/10358317/201103096-a62b7d08-1208-485f-8bd4-de5b5c7b1e06.png)
+![Screenshot 2025-02-25 at 15 05 55](https://github.com/user-attachments/assets/abcdeebf-5f85-4b63-92be-59724e4fbc12)
+
 
 - If you enter "never-existed-tect-package" as apt name, you can see that it cannot install on the nodes, because it does not exist.
 
-![image](https://user-images.githubusercontent.com/10358317/201104092-7a38235c-1a48-4f16-8c2e-9269be6d7faa.png)
+<img width="943" alt="Screenshot 2025-02-25 at 15 09 02" src="https://github.com/user-attachments/assets/b9e75a9b-fa9a-4e3f-b833-f8c5dce6428b" />
 
-![image](https://user-images.githubusercontent.com/10358317/201103961-7a10a711-d6e4-4aac-b05c-f5d5172f25ad.png)
 
 #### "Update" command in the playbook
 
@@ -83,14 +83,14 @@ ansible-playbook --ask-become-pass install_apache.yml
     apt:
       name: libapache2-mod-php
 ``` 
-
-![image](https://user-images.githubusercontent.com/10358317/201105158-4b3e598b-0726-444f-8844-ee99fc8f8d82.png)
+<img width="388" alt="Screenshot 2025-02-25 at 15 12 26" src="https://github.com/user-attachments/assets/241b51ec-0049-4dc8-8793-e3fc4dc9a8ee" />
 
 ``` 
 ansible-playbook --ask-become-pass install_apache.yml
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201105473-2697a57a-4334-484f-97d9-501452007259.png)
+<img width="833" alt="Screenshot 2025-02-25 at 15 12 54" src="https://github.com/user-attachments/assets/173833f9-83ed-4a28-8005-8a11448a2631" />
+
 
 - Add "state: latest" to install latest version of the app
 
@@ -116,7 +116,8 @@ ansible-playbook --ask-become-pass install_apache.yml
       state: latest
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/201106278-537221bf-878a-4ee3-b211-83e9e52e252f.png)
+<img width="896" alt="Screenshot 2025-02-25 at 15 15 42" src="https://github.com/user-attachments/assets/c5b2fd96-dabe-48f7-8dbc-4724080339e6" />
+
 
 #### "Apt remove" command in the playbook
 
@@ -147,11 +148,13 @@ ansible-playbook --ask-become-pass install_apache.yml
 ansible-playbook --ask-become-pass remove_apache.yml
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201107516-ff2b2337-a01c-401d-af0a-177ac38c58c7.png)
+<img width="873" alt="Screenshot 2025-02-25 at 15 17 26" src="https://github.com/user-attachments/assets/0bfc4d81-3467-428b-bdce-39760953a328" />
+
 
 - When browsing IP to see whether apache2 works or not, it is seen that apache2 server was uninstalled.
 
-![image](https://user-images.githubusercontent.com/10358317/201107771-df10bf6e-367c-4235-a779-2703958b8774.png)
+![Screenshot 2025-02-25 at 15 17 57](https://github.com/user-attachments/assets/9bb8f320-44b7-4882-b7ea-e30f027c42c0)
+
 
 #### Command According to the Distribution ("when")
 
@@ -185,10 +188,11 @@ ansible-playbook --ask-become-pass remove_apache.yml
 - To get more information about the specific node. 
 
 ```
-ansible all -m gather_facts --limit 172.21.79.85 | grep ansible_distribution
+ansible all -m gather_facts --limit 192.168.64.6 | grep ansible_distribution
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/201655623-98733d68-3624-48a1-8589-d6ec62bbf7aa.png)
+<img width="773" alt="Screenshot 2025-02-25 at 15 31 55" src="https://github.com/user-attachments/assets/7f929ca7-c2d6-488a-81ed-6c5dbb60adc1" />
+
 
 - It is possible to use 'when' commands with other details (e.g. "ansible_distribution_version": "22.04")
 
@@ -241,7 +245,7 @@ ansible-playbook --ask-become-pass install_apache.yml
 ``` 
 - Tasks that are defined for 'CentOS' are skipped
 
-![image](https://user-images.githubusercontent.com/10358317/201657035-511cf7aa-8b17-4f87-95f9-4ea8d2772b1d.png)
+<img width="881" alt="Screenshot 2025-02-25 at 15 34 06" src="https://github.com/user-attachments/assets/1610a283-05dd-4404-9345-02cbfe37285c" />
 
 
 ### Reference
