@@ -8,6 +8,7 @@ https://github.com/andylovecloud/nodejs-random-color
 #- Use Dockerfile to build the image
 #- Push the image to AWS ECR
 # View the lab5.groovy file
-#Trouble shoot error Permission denied
+
+#Trouble shoot error Permission denied, run the following commands in remote server
 sudo usermod -a -G docker jenkins
 sudo systemctl restart jenkins
