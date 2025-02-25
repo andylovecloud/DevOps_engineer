@@ -1,4 +1,8 @@
-# Introduction
+
+By follwing instruction by [Omerbsezer](https://github.com/omerbsezer) with hand-on lab series [Fast Ansible](https://github.com/omerbsezer/Fast-Ansible)
+I could improve my knowledge from the theory to practical.
+
+# Introduction about Ansible
 
 |       |        |
 |---------------     |-------------- |
