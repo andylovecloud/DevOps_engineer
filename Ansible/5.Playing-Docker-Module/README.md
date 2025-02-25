@@ -111,19 +111,19 @@ This scenario shows:
       debug:
         msg: "{{image_info.stdout_lines}}"
 
-#    - name: Stop containers
-#      tags: stop
-#      docker_container:
-#        name: "{{ default_container_name }}{{ item }}"
-#        state: stopped
-#      with_sequence: count={{ container_count }}
+    - name: Stop containers
+      tags: stop
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        state: stopped
+      with_sequence: count={{ container_count }}
 
-#    - name: Remove containers
-#      tags: remove
-#      docker_container:
-#        name: "{{ default_container_name }}{{ item }}"
-#        state: absent
-#      with_sequence: count={{ container_count }}  
+    - name: Remove containers
+      tags: remove
+      docker_container:
+        name: "{{ default_container_name }}{{ item }}"
+        state: absent
+      with_sequence: count={{ container_count }}  
 ``` 
 
 - Run following command to run all, but we should use tags to run specific commands:
@@ -194,10 +194,17 @@ ansible-playbook docker_play.yml --tags stop
 ```
 ansible-playbook docker_play.yml --tags remove
 ```
+<img width="847" alt="Screenshot 2025-02-25 at 20 58 51" src="https://github.com/user-attachments/assets/48c96d93-41ad-4662-b209-a68d7cfec135" />
 
-![image](https://user-images.githubusercontent.com/10358317/203595029-7e9c6d1a-2b5f-4881-9d9e-9c60b68cb0e0.png)
+
+- Check again after remove docker container:
 
 
+<img width="893" alt="Screenshot 2025-02-25 at 20 59 02" src="https://github.com/user-attachments/assets/e157ede6-57e0-4725-ab86-1e3ce6aa5032" />
+
+
+
+=========================
 ### Sample Docker Tasks:
 
 - Sample Docker Tasks are taken from here: 
