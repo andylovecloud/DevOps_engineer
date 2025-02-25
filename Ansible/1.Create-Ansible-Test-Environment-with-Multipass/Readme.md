@@ -24,7 +24,8 @@ multipass launch --name node2 -c 2 -m 2G -d 10G
 multipass list
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201082045-b90b645b-c6b5-4d8f-9bd6-4bb09c0f0ea7.png)
+<img width="991" alt="Multipass-install-node-controlnode" src="https://github.com/user-attachments/assets/9be923cf-d800-49f6-a83e-1536fe341b2b" />
+
 
 - Connect VMs by opening shells
 
@@ -37,7 +38,8 @@ multipass shell node1
 multipass shell node2
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201082458-97b41058-5389-4301-b1e2-06a1b9d3a4ba.png)
+<img width="811" alt="Multipass-get-shell-controlnode" src="https://github.com/user-attachments/assets/50fb4348-e3cb-4c12-9423-3bf367c185a1" />
+
 
 ``` 
 sudo apt update
@@ -55,7 +57,8 @@ ssh-keygen (no password, enter 3 times)
 cat ~/.ssh/id_rsa.pub (copy the value)
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201083201-8e0a9bfb-8001-429e-881f-d38a7c970015.png)
+<img width="840" alt="Multipass-generate-ssh-key" src="https://github.com/user-attachments/assets/3f67d6ac-b588-4948-9a8c-5562108efeb3" />
+
 
 - Paste copied public key (control plane) into the authorized_keys in each managed nodes.
 
