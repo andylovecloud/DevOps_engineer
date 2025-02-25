@@ -172,14 +172,16 @@ ansible-playbook docker_play.yml --tags install
 ansible-playbook docker_play.yml --tags container_ls
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/203594440-46b99a95-f4b5-4f8b-9d10-93d5cd8eddd5.png)
+<img width="870" alt="Screenshot 2025-02-25 at 20 53 17" src="https://github.com/user-attachments/assets/d1a85f2f-4981-4a1a-a5a2-9da5def991b0" />
+
 
 - To run (sudo docker images):
 ```
 ansible-playbook docker_play.yml --tags image_ls
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/203594583-4edac3c5-50b3-4ee3-8172-2e6413adf094.png)
+<img width="854" alt="Screenshot 2025-02-25 at 20 53 56" src="https://github.com/user-attachments/assets/42bb31db-e35f-4c91-a8a2-ca8b2c2b4473" />
+
 
 - To stop docker containers (in this case, containers are not up, their status is 'created'):
 
