@@ -24,7 +24,8 @@ multipass launch --name node2 -c 2 -m 2G -d 10G
 multipass list
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201082045-b90b645b-c6b5-4d8f-9bd6-4bb09c0f0ea7.png)
+<img width="991" alt="Multipass-install-node-controlnode" src="https://github.com/user-attachments/assets/9be923cf-d800-49f6-a83e-1536fe341b2b" />
+
 
 - Connect VMs by opening shells
 
