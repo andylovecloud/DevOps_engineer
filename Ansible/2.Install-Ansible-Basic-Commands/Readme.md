@@ -23,7 +23,7 @@ sudo apt install ansible
 
 - Put the managed nodes' IPs into the inventory file
 
-![image](https://user-images.githubusercontent.com/10358317/201088310-e7859682-dc0d-46f5-bac4-ba553e38be90.png)
+<img width="580" alt="Ansible-inventory" src="https://github.com/user-attachments/assets/8ae680fa-ded8-4611-b3d8-e1d8a1b90cde" />
 
 - Ping all nodes with ansible
 
@@ -31,7 +31,8 @@ sudo apt install ansible
 ansible all -i inventory -m ping
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201089266-84c032d5-7647-45ec-b44a-0323cf7f6274.png)
+<img width="455" alt="Ansible-ControlNode-ping-all-nodes" src="https://github.com/user-attachments/assets/db446dea-09a9-4919-b75c-3b224cf551f3" />
+
 
 **NOTE:** If you use secure private SSH keys on each nodes (copied these keys on each nodes), it should be used "ansible all --key-file ~/.ssh -i inventory -m ping" 
 
@@ -51,14 +52,16 @@ inventory = inventory
 
 - Using config file (ansible.cfg), we can use short commands
 
-![image](https://user-images.githubusercontent.com/10358317/201090690-752feb31-9b42-42df-a89f-63e3092b4a32.png)
+<img width="454" alt="Ansible-ping-by-ansible-cfg-file" src="https://github.com/user-attachments/assets/0b6d5c6e-fa0d-4d75-82fa-52408a8b24a1" />
+
 
 - List all hosts
 
 ```
 ansible all --list-hosts
 ``` 
-![image](https://user-images.githubusercontent.com/10358317/201090920-d5d2a294-698a-4e62-89e7-7df3f1d1834d.png)
+
+<img width="407" alt="Ansible-list-host" src="https://github.com/user-attachments/assets/9e6fcf0f-ac46-4ba1-889e-a0e733ec2ae3" />
 
 - Gather all nodes' information (all resources' information: cpu, ip, ssd, etc.) from all hosts
 
@@ -67,7 +70,8 @@ ansible all --list-hosts
 ansible all -m gather_facts
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201091229-60ab2618-ba53-4460-96f8-7c69a4a9c6b1.png)
+<img width="683" alt="Ansible-gather-facts-node" src="https://github.com/user-attachments/assets/f131d010-f7d7-4fc5-a8e2-79eb81cf6d33" />
+
 
 - Gather information from specific node 
 
@@ -82,7 +86,8 @@ ansible all -m gather_facts --limit 172.26.215.23
 ansible all -m apt -a update_cache=true
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/201094159-89918be8-1d73-4a10-b346-4d54a1bc104f.png)
+<img width="950" alt="Ansible-update-cache-failed" src="https://github.com/user-attachments/assets/10f9ff40-c12b-4c52-b1df-92e305182f98" />
+
 
 - The reason why "sudo apt update" does not work is to enter "sudo" password for all nodes.
 - For now, we are assigning same password for all nodes (node1, node2). Later, it will be shown for different passwords.
@@ -101,7 +106,8 @@ sudo passwd ubuntu
 ansible all -m apt -a update_cache=true --become --ask-become-pass
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/201095106-cfa74f25-9ae6-4ca2-b34a-061ed5d6622d.png)
+<img width="697" alt="Ansible-changed-same-password" src="https://github.com/user-attachments/assets/ef93ac0f-cba5-474e-9f43-ce4d70cc0e0c" />
+
 
 - Install specific package "sudo apt get snapd"
 
@@ -111,5 +117,5 @@ ansible all -m apt -a name=snapd --become --ask-become-pass
 ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
 ```
 
-![image](https://user-images.githubusercontent.com/10358317/201097511-9b0893f5-120c-4af1-be6d-a35fc15681a5.png)
+<img width="652" alt="Ansible-install-specific-package" src="https://github.com/user-attachments/assets/f19c9c7e-b4c9-4d77-84c1-68c8a2cd0e65" />
 
