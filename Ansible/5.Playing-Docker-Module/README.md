@@ -111,19 +111,19 @@ This scenario shows:
       debug:
         msg: "{{image_info.stdout_lines}}"
 
-    - name: Stop containers
-      tags: stop
-      docker_container:
-        name: "{{ default_container_name }}{{ item }}"
-        state: stopped
-      with_sequence: count={{ container_count }}
+#    - name: Stop containers
+#      tags: stop
+#      docker_container:
+#        name: "{{ default_container_name }}{{ item }}"
+#        state: stopped
+#      with_sequence: count={{ container_count }}
 
-    - name: Remove containers
-      tags: remove
-      docker_container:
-        name: "{{ default_container_name }}{{ item }}"
-        state: absent
-      with_sequence: count={{ container_count }}  
+#    - name: Remove containers
+#      tags: remove
+#      docker_container:
+#        name: "{{ default_container_name }}{{ item }}"
+#        state: absent
+#      with_sequence: count={{ container_count }}  
 ``` 
 
 - Run following command to run all, but we should use tags to run specific commands:
@@ -132,15 +132,33 @@ This scenario shows:
 ansible-playbook docker_play.yml
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/203569878-7eec129a-82ce-47a4-90b4-2f11a08337f5.png)
+<img width="1011" alt="Screenshot 2025-02-25 at 20 40 32" src="https://github.com/user-attachments/assets/d097375e-2b6a-4155-89a6-a8d595030686" />
+
+<img width="963" alt="Screenshot 2025-02-25 at 20 40 45" src="https://github.com/user-attachments/assets/53c2d85d-f0db-4bc1-a7c1-13b00d37a7f1" />
 
 
+- If you find the **error** as below:
+
+<img width="1022" alt="Screenshot 2025-02-25 at 19 57 29" src="https://github.com/user-attachments/assets/c89d7fa7-8487-42f2-990b-6aab2b43b696" />
+
+Change the parametter in file docker_play.yml as below, and run **ansible-playbook docker_play.yml** again.
+
+```
+- name: Install Docker module for Python
+  apt:
+    name: python3-docker
+    state: present
+```
+
+After run sucessfully, login to node machine to check container instalation:
+  
 ```
 ssh 172.21.67.249
 sudo docker container ls -a
 ```
+<img width="730" alt="Screenshot 2025-02-25 at 20 40 54" src="https://github.com/user-attachments/assets/3494dcdd-cae8-4570-855a-f80d059f4004" />
 
-![image](https://user-images.githubusercontent.com/10358317/203570423-d9721ceb-6869-439c-842d-66112fc931ec.png)
+
 
 - To install docker on nodes:
 ```
