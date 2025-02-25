@@ -57,7 +57,8 @@ ssh-keygen (no password, enter 3 times)
 cat ~/.ssh/id_rsa.pub (copy the value)
 ``` 
 
-![image](https://user-images.githubusercontent.com/10358317/201083201-8e0a9bfb-8001-429e-881f-d38a7c970015.png)
+<img width="840" alt="Multipass-generate-ssh-key" src="https://github.com/user-attachments/assets/3f67d6ac-b588-4948-9a8c-5562108efeb3" />
+
 
 - Paste copied public key (control plane) into the authorized_keys in each managed nodes.
 
