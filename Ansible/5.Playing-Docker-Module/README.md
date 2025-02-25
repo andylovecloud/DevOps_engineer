@@ -139,9 +139,11 @@ ansible-playbook docker_play.yml
 
 - If you find the **error** as below:
 
+
 <img width="1022" alt="Screenshot 2025-02-25 at 19 57 29" src="https://github.com/user-attachments/assets/c89d7fa7-8487-42f2-990b-6aab2b43b696" />
 
-Change the parametter in file docker_play.yml as below, and run **ansible-playbook docker_play.yml** again.
+
+- Change the parametter in file docker_play.yml as below, and run **ansible-playbook docker_play.yml** again.
 
 ```
 - name: Install Docker module for Python
@@ -150,7 +152,7 @@ Change the parametter in file docker_play.yml as below, and run **ansible-playbo
     state: present
 ```
 
-After run sucessfully, login to node machine to check container instalation:
+- After run sucessfully, login to node machine to check container instalation:
   
 ```
 ssh 172.21.67.249
