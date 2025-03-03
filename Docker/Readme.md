@@ -46,12 +46,22 @@ And then.... T.T 😭
 # What is Docker?
 |                    |               |
 |---------------     |-------------- |
-|Docker is a software platform that allows you to build, test, and deploy applications quickly. Docker packages software into standardized units called containers that contain everything the software needs to run, including libraries, system tools, code, and runtime. Using Docker, you can quickly deploy and scale applications into any environment and know that your code will run (build one – run anywhere). | <img width="292" alt="Docker-logo" src="https://github.com/user-attachments/assets/64d6ffa4-f829-4d09-a9f9-e843fed82f21" />|
+|[Docker](https://aws.amazon.com/vi/containers/) is a software platform that allows you to build, test, and deploy applications quickly. Docker packages software into standardized units called [containers](https://aws.amazon.com/vi/containers/) that contain everything the software needs to run, including libraries, system tools, code, and runtime. Using Docker, you can quickly deploy and scale applications into any environment and know that your code will run (build one – run anywhere). | <img width="292" alt="Docker-logo" src="https://github.com/user-attachments/assets/64d6ffa4-f829-4d09-a9f9-e843fed82f21" />|
 
 
 ## Basic components of Docker
 
 <img width="953" alt="Basic-component-of-Docker" src="https://github.com/user-attachments/assets/e1d39a74-f4f2-4677-b337-298ec08d0769" />
 
+- **Docker daemon**: is the place to manage Docker components such as images, containers, volumes, networks. Docker daemon receives API from Client to execute tasks.
+- **Docker Client**: Provides methods to interact with Docker daemon.
+- **Docker registry**: where docker images are stored. By default, docker will connect to the docker registry which is Docker hub.
+_When you install Docker Desktop, Daemon and Client will be on the same computer._
 
-
+## Basic Steps to Build a Docker Application
+1. **Prepare a Dockerfile**: A Dockerfile describes the steps required to create a container environment that will contain your application.
+2. **Build Docker Image**: Use the docker build command to build a Docker Image from the Dockerfile.
+3. **Test the Docker Image**: Use the docker images command to check the list of Docker images available on your computer. Make sure that your application's Docker Image has been successfully built and appears in the list.
+4. **Run Docker Container**: Use the docker run command to run a container from the Docker Image.
+5. **Test the application**: Access your application via the IP address or domain name along with the specified port.
+6. 
