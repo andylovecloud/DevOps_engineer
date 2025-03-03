@@ -42,5 +42,39 @@
 
 <img width="1334" alt="Git-service-providers" src="https://github.com/user-attachments/assets/f7b8de41-04df-47a4-9416-e944923d606f" />
 
+## Some basic operation
+- **git version**: check your git version
+- **git status**: check where are you working on
+- **git branch --all / --a**: see all the branches.
+- **git switch <BRANCH-NAME>**: to switch the branch you created.
+- **git add <my-file>**: move the file from the working tree to the staging area
+- **git commit**: take your snapshot
+- **git log**: check the history of your activities.
+- **git show <commit hash>**: displays information about the commit with the hash
+- **git stash**: Temporarily save unfinished work to an area to switch to another branch.
+  - git stash: This cmd only includes tracked files.
+  - git stash --include-untracked: This cmd also includes untracked files.
+  - git stash apply: take the stashed changes to the current branch.
+- **git reset**: Reset the current branch.
+  - git reset --hard <commit>: move the branch to the specified commit and discard all changes after that commit.
+  - git reset --mixed <commit>: move the branch to the specified commit and make the changed files unstaged. You can review & add the necessary files.
+  - git reset --soft <commit>: move the branch to the specified commit and keep the changed files staged. You can re-run the git commit command to commit again.
+
+## Distinguish between Git Merge vs. Rebase vs Squash commit
+When combining code between a feature branch and a main branch (e.g. develop), there are two commonly used approaches:
+- **Merge**: create a new common node between the two branches.
+- **Rebase**: Bring all commits from the source branch to the top of the target branch (in order).
+- **Squash** commit: bring all commits from the source branch into a single commit and push it to the top of the target branch.
+
+<img width="1291" alt="Distinguish between Git Merge vs  Rebase vs Squash commit" src="https://github.com/user-attachments/assets/99b62288-74b8-423c-b7c7-b0dbc77bcc9e" />
 
 
+## Best practice for Git using
+- **Use Branches**: Use branches whenever developing a feature or fixing a bug. Helps developers work without affecting each other, and also makes it easier to review changes.
+- **Commit frequently**: Helps track progress, isolate changes, and easily revert if necessary. Each commit should include logic and small (atomic) changes.
+- **Write clear, easy-to-understand commit messages**: Helps other members easily review code.
+- **Pull Before Push**: Always pull the latest code from the remote repository before pushing changes. Helps reduce conflicts and ensures you're working with the latest code base.
+- **Review Code**: Detect bugs early, improve code quality, share knowledge among team members.
+- **Resolve Conflicts appropriately**: Take the time to understand the code content before resolving conflicts.
+- **Use Git Tags and Releases**: Use git tags for important milestones. Helps track releases, manage stable versions, and simplify the deployment process.
+- **Backup and Remote Repositories**: Regularly backup remote repository to avoid data loss.
