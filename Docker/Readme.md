@@ -36,10 +36,11 @@ And then.... T.T 😭
 3. Efficient resource management: deploying an application using Containers allows you to share and use system resources efficiently. By running multiple containers on the same physical server or virtual machine, you can make the most of the system's computing power and resources.
 
 4. Flexibility and scalability: Containers allow you to easily scale your application as needed. By scaling horizontally, the application can scale to meet the workload. Additionally, it is easy to deploy multiple versions of an application at the same time.
+
 |                    |
 |---------------     |
-|![docker-2](https://github.com/user-attachments/assets/012ac008-224e-4ed8-b60f-cac57a60c4de) <br><center> _VMs and Containers illustrated (zonov.me)_</center>|
-||
+|![docker-2](https://github.com/user-attachments/assets/012ac008-224e-4ed8-b60f-cac57a60c4de)|
+|_VMs and Containers illustrated (zonov.me)_</center>|
 
 
 # What is Docker?
