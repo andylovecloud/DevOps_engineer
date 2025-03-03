@@ -64,4 +64,3 @@ _When you install Docker Desktop, Daemon and Client will be on the same computer
 3. **Test the Docker Image**: Use the docker images command to check the list of Docker images available on your computer. Make sure that your application's Docker Image has been successfully built and appears in the list.
 4. **Run Docker Container**: Use the docker run command to run a container from the Docker Image.
 5. **Test the application**: Access your application via the IP address or domain name along with the specified port.
-6. 
