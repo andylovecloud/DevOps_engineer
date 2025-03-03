@@ -37,7 +37,6 @@ And then.... T.T 😭
 
 4. Flexibility and scalability: Containers allow you to easily scale your application as needed. By scaling horizontally, the application can scale to meet the workload. Additionally, it is easy to deploy multiple versions of an application at the same time.
 
-|                    | 
 |---------------     |
 |![docker-2](https://github.com/user-attachments/assets/012ac008-224e-4ed8-b60f-cac57a60c4de)|
 |_VMs and Containers illustrated (zonov.me)_|
