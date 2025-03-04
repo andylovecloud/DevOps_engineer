@@ -1,4 +1,6 @@
-# Introduction
+By following the instruction from my online teacher https://github.com/hoanglinhdigital/devops-for-beginner, I'm exploring my Terraform's knowledge with hand-on labs.
+
+## Introduction
 - **Provider**: [HashiCorp](https://developer.hashicorp.com/terraform)
 - **Language**: HashiCorp Configuration Language (HCL).
 - **Support** cloud provider: [AWS](https://developer.hashicorp.com/terraform/tutorials/aws-get-started), GCP, Azure,...
