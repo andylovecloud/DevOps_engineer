@@ -1,10 +1,28 @@
-#Practice getting familiar with Docker through the following operations
-#Pull an image from docker registry (Docker Hub)
+# Practice getting familiar with Docker through the following operations
+
+## Login into docker hub from terminal (created account is required)
+
+```
+docker login
+```
+ ![Screenshot 2025-03-04 at 12 14 27](https://github.com/user-attachments/assets/684bca88-4718-4b0c-a2b8-15d6d6fbe3b4)
+
+## Pull an image from docker registry (Docker Hub)
 docker pull <image>:<tag>
-#List image
+
+## List image
 docker images
-#List all containers
+## List all containers
 docker ps
+
+
+
+
+
+
+
+
+
 #Run a container from image
 docker run -d -p <host port>:<container port> <image>:<tag>
 #Some examples:
