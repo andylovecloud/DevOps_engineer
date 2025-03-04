@@ -24,7 +24,7 @@ EXPOSE 80
 CMD ["httpd-foreground"]
 ```
 
-### Run below command to build image.
+### Run below command to build image:
 ```
 docker build -t my-http-image .
 ```
@@ -33,14 +33,12 @@ docker build -t my-http-image .
 <img width="1119" alt="Screenshot 2025-03-04 at 13 26 29" src="https://github.com/user-attachments/assets/fe6652ef-63b7-4f6e-8354-d8b4e7135dfb" />
 
 
-#### check image
+#### Check image:
 ```
 docker images
 ```
 <img width="741" alt="Screenshot 2025-03-04 at 13 27 05" src="https://github.com/user-attachments/assets/beb64798-5629-4e5d-a11d-0c0860331454" />
 
-
-<img width="741" alt="Screenshot 2025-03-04 at 13 27 05" src="https://github.com/user-attachments/assets/348bc456-43cd-4cc2-84e7-fea97f57e37f" />
 
 ### Run below command to run container.
 ```
