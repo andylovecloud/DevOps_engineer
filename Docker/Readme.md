@@ -64,3 +64,31 @@ _When you install Docker Desktop, Daemon and Client will be on the same computer
 3. **Test the Docker Image**: Use the docker images command to check the list of Docker images available on your computer. Make sure that your application's Docker Image has been successfully built and appears in the list.
 4. **Run Docker Container**: Use the docker run command to run a container from the Docker Image.
 5. **Test the application**: Access your application via the IP address or domain name along with the specified port.
+
+## Dockerfile
+- Dockerfile defines a directive to have Docker build a custom image, which content your own source code.
+- Base image declaration: Dockerfiles usually start with a **FROM** directive to specify the base image that the new Docker image will be based on. For example: **FROM ubuntu:latest, FROM httpd etc.**
+- Copy files and directories: Using the **COPY** or **ADD** directive, you can copy files and directories from the host where the Dockerfile is run into inside the Docker image. For example: **COPY app.py /app, COPY . /usr/local/apache2/htdocs/**
+- **RUN** directive. You can execute commands inside the image build process for example to install software, update packages or perform other tasks. For example: **RUN apt-get update && apt-get install -y python.**
+- Setting environment variables: Using the **ENV** directive, you can define environment variables for the Docker image. For example: **ENV LOGLEVEL=DEBUG.**
+- Open ports: Using the **EXPOSE** directive, you can specify the ports that the application in the Docker image will listen on. For example: **EXPOSE 80**.
+- Run the application: Using the **CMD** directive, you can specify the command that Docker will run when starting a container from the image. For example: **CMD ["python", "/app/app.py"]**
+
+<img width="564" alt="Screenshot 2025-03-04 at 13 13 09" src="https://github.com/user-attachments/assets/e103d199-2867-4723-84b6-0993cc011b3d" />
+
+### Distinguishing the COPY directive and the ADD directive
+- COPY and ADD both support copying files/folders.
+- ADD supports decompression during copying, copying from URLs on the Internet.
+- COPY does not support decompression or support URLs on the Internet.
+
+In addition to the CMD directive, there is another directive called ENTRYPOINT that is also used to define the command that will run when the Container starts, but there is a difference:
+- ENTRYPOINT defines the process that will be executed inside the container
+- CMD defines the default arguments provided to the entrypoint process.
+
+Usually, ENTRYPOINT will define the path to the process that will be executed, CMD defines the param (if any).
+By default, ENTRYPOINT is not defined, docker will understand the entry point as **/bin/sh -c**
+
+
+
+
+
