@@ -1,4 +1,4 @@
-This is the place where I document my understanding about VM, container and Docker knowledge. 
+This is the place where I document my understanding about VM, container and Docker knowledge. By following the hand-on labs from my online teacher https://github.com/hoanglinhdigital/devops-for-beginner.
 
 # What is situation / problems when using Virtual Machine now?
 
