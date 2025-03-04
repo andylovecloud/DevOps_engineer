@@ -30,12 +30,13 @@ Steps to implement Infra as code:
 ### Common tools in IaC:
 - **CloudFormation**: Provider: Amazon Web Services (AWS). This service allow users to define, implement infrastructure and resources by template(Yaml or Json)
 - **AWS Cloud Development Kit (CDK)**: Tool allows define cloud infrastructure by popular programming languages: TypeScript, JavaScript, Python, C# and Java. Provision resource automatically. Basically, behind CDK still available CloudFormation stack.
-- **Terraform**: Provider: HashiCorp. Open source tool allows user define infrastructure as code, flexibility and compatibility with many cloud providers (AWS, Azure, GCP). Terraform does not create CloudFormation stack during deployment.
+- [**Terraform**](https://github.com/andylovecloud/DevOps_engineer/tree/main/Terraform): Provider: HashiCorp. Open source tool allows user define infrastructure as code, flexibility and compatibility with many cloud providers (AWS, Azure, GCP). Terraform does not create CloudFormation stack during deployment.
 - **Azure Resource Manager (ARM) Templates**: Provider: Microsoft. This allows user define cloud infrastructure by JSON templates.
 - **Google Cloud Deployment Manager**: Provider: Google Cloud. This allows user define cloud infrastructure and automation tasks by YAML configuration files.
-- **Ansible**: agentless model, install only in host machine. Use SSH to connect and manage servers. Use YAML to write playbook and roles.
+- [**Ansible**](https://github.com/andylovecloud/DevOps_engineer/tree/main/Ansible): agentless model, install only in host machine. Use SSH to connect and manage servers. Use YAML to write playbook and roles.
 - **Puppet**: agent-master model, install in all host machines. Use SSL to connect and manage servers. Code in private DSL(Domain Specific Language) of Puppet and Ruby.
 - **Chef**: client-server model, install client in all servers. Use SSL to connect and manage servers. Use Ruby DSL to write recipes and cookbooks.
+- [**Jenkins**](https://github.com/andylovecloud/DevOps_engineer/tree/main/Jenkins) is an open source tool used to deploy and automate software development. It provides a continuous integration (CI) environment for building, testing, and deploying applications. Jenkins allows you to create jobs to perform tasks such as _building source, running automation tests, deploying applications, and reporting results_. By integrating with other tools and using available plugins, Jenkins can be customized and extended to suit your software development needs.
 
 ![CICD-concepts](https://github.com/user-attachments/assets/b2b91224-10ae-4c11-a01e-a4ea17285cc2)
 
