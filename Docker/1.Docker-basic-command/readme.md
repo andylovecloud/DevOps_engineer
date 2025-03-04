@@ -40,7 +40,10 @@ docker run -d -p 8080:80 nginx:latest
 
 <img width="1102" alt="Screenshot 2025-03-04 at 11 26 27" src="https://github.com/user-attachments/assets/2ae76371-8996-4ba8-a351-a829868bd52f" />
 
+
 Load the URL: localhost:8080 in the browser to check the result:
+
+
 ![Screenshot 2025-03-04 at 11 27 03](https://github.com/user-attachments/assets/b62f5aea-7ad6-4cce-a1fd-b34ac77fa898)
 
 
