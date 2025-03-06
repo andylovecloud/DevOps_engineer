@@ -7,6 +7,8 @@
  - EC2, Application Load Balancer, Target Group, Autoscaling Group.
  - MongoDB database.
 
+You can find my final results here: https://github.com/andylovecloud/DevOps_engineer/tree/main/Terraform/AWS-Labs/7.Build-in-Modules-with-MongoDB/Results
+
 ## Objective:
 Create an advanced AWS VPC to host a fully functioning cloud native application.
 
@@ -266,7 +268,6 @@ The ALB will configured with a single listener (port 80). 2 target groups will b
 
 ![AWS-VPC-FullApp-TargetGrps](https://github.com/user-attachments/assets/9e2c6fde-6b24-40ef-8aa8-e0f31035101d)
 
-_AWS Architecture_
 
 **Project Structure**
 ```
