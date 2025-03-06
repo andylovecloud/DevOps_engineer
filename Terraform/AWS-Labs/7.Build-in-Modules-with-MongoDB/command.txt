@@ -1,10 +1,8 @@
 #Require: re-use keypair from lab2
+#NOTE: PLEASE USE SINGAPORE REGION!!!!
 
-#Reference: Terraform modules:
-https://developer.hashicorp.com/terraform/language/modules/syntax
-
-#Reference: Terraform vpc built-in module:
-https://registry.terraform.io/modules/terraform-aws-modules/vpc/aws/latest
+#Reference: Terraform Excercise No4 from CloudAcademy:
+https://github.com/cloudacademy/terraform-aws
 
 #Commands Terraform:
 terraform init
