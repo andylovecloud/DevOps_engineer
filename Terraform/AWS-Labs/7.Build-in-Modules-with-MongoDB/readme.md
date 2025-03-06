@@ -7,9 +7,13 @@
  - EC2, Application Load Balancer, Target Group, Autoscaling Group.
  - MongoDB database.
 
+## Objective:
 Create an advanced AWS VPC to host a fully functioning cloud native application.
 
-Cloud Native Application
+![Screenshot 2025-03-06 at 13 01 11](https://github.com/user-attachments/assets/469a27f8-86ff-47a3-9508-31fce1381789)
+
+
+_Cloud Native Application_
 
 
 The VPC will span 2 AZs, and have both public and private subnets. An internet gateway and NAT gateway will be deployed into it. Public and private route tables will be established. An application load balancer (ALB) will be installed which will load balance traffic across an auto scaling group (ASG) of Nginx web servers installed with the cloud native application frontend and API. A database instance running MongoDB will be installed in the private zone. Security groups will be created and deployed to secure all network traffic between the various components.
@@ -20,16 +24,33 @@ https://github.com/cloudacademy/terraform-aws/tree/main/exercises/exercise4
 
 <img width="723" alt="Screenshot 2025-03-06 at 10 23 18" src="https://github.com/user-attachments/assets/543a2f8b-fab9-4773-b7e6-ae9cb391f6ba"
 
-AWS Architecture
 
 The auto scaling web application layer bootstraps itself with both the Frontend and API components by pulling down their latest respective releases from the following repos:
 
 - Frontend: https://github.com/cloudacademy/voteapp-frontend-react-2020/releases/latest
 - API: https://github.com/cloudacademy/voteapp-api-go/releases/latest
 
-The bootstrapping process for the Frontend and API components is codified within a template_cloudinit_config block located in the application module's main.tf file:
+
+
+The original template of this application was outdate, the below code was the one updated for the **_application module's main.tf_** file:
 
 ```
+terraform {
+  required_version = ">= 1.4.0"
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.0.0"
+    }
+    template = {
+      source  = "hashicorp/template"
+      version = "2.2.0"
+    }
+  }
+}
+
+#====================================
+
 data "template_cloudinit_config" "config" {
   gzip          = false
   base64_encode = false
@@ -51,10 +72,10 @@ data "template_cloudinit_config" "config" {
 
     echo ===========================
     echo FRONTEND - download latest release and install...
-    mkdir -p ./voteapp-frontend-react-2020
-    pushd ./voteapp-frontend-react-2020
-    curl -sL https://api.github.com/repos/cloudacademy/voteapp-frontend-react-2020/releases/latest | jq -r '.assets[0].browser_download_url' | xargs curl -OL
-    INSTALL_FILENAME=$(curl -sL https://api.github.com/repos/cloudacademy/voteapp-frontend-react-2020/releases/latest | jq -r '.assets[0].name')
+    mkdir -p ./voteapp-frontend-react-2023
+    pushd ./voteapp-frontend-react-2023
+    curl -sL https://api.github.com/repos/cloudacademy/voteapp-frontend-react-2023/releases/latest | jq -r '.assets[0].browser_download_url' | xargs curl -OL
+    INSTALL_FILENAME=$(curl -sL https://api.github.com/repos/cloudacademy/voteapp-frontend-react-2023/releases/latest | jq -r '.assets[0].name')
     tar -xvzf $INSTALL_FILENAME
     rm -rf /var/www/html
     cp -R build /var/www/html
@@ -80,6 +101,162 @@ data "template_cloudinit_config" "config" {
 
     EOF    
   }
+}
+
+
+#====================================
+
+#tfsec:ignore:aws-ec2-enforce-launch-config-http-token-imds
+resource "aws_launch_template" "apptemplate" {
+  name = "application"
+
+  image_id               = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  vpc_security_group_ids = [var.webserver_sg_id]
+
+  tag_specifications {
+    resource_type = "instance"
+
+    tags = {
+      Name  = "FrontendApp"
+      Owner = "Udemy"
+    }
+  }
+
+  user_data = base64encode(data.template_cloudinit_config.config.rendered)
+}
+
+#====================================
+
+#tfsec:ignore:aws-elb-alb-not-public
+resource "aws_lb" "alb1" {
+  name                       = "alb1"
+  internal                   = false
+  load_balancer_type         = "application"
+  security_groups            = [var.alb_sg_id]
+  subnets                    = var.public_subnets
+  drop_invalid_header_fields = true
+  enable_deletion_protection = false
+
+  /*
+  access_logs {
+    bucket  = aws_s3_bucket.lb_logs.bucket
+    prefix  = "test-lb"
+    enabled = true
+  }
+  */
+
+  tags = {
+    Environment = "Prod"
+  }
+}
+
+resource "aws_alb_target_group" "webserver" {
+  vpc_id   = var.vpc_id
+  port     = 80
+  protocol = "HTTP"
+
+  health_check {
+    path                = "/"
+    interval            = 10
+    healthy_threshold   = 3
+    unhealthy_threshold = 6
+    timeout             = 5
+  }
+}
+
+resource "aws_alb_target_group" "api" {
+  vpc_id   = var.vpc_id
+  port     = 8080
+  protocol = "HTTP"
+
+  health_check {
+    path                = "/ok"
+    interval            = 10
+    healthy_threshold   = 3
+    unhealthy_threshold = 6
+    timeout             = 5
+  }
+}
+
+#tfsec:ignore:aws-elb-http-not-used
+resource "aws_alb_listener" "front_end" {
+  load_balancer_arn = aws_lb.alb1.arn
+  port              = "80"
+  protocol          = "HTTP"
+
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_alb_target_group.webserver.arn
+  }
+}
+
+resource "aws_alb_listener_rule" "frontend_rule1" {
+  listener_arn = aws_alb_listener.front_end.arn
+  priority     = 100
+
+  condition {
+    path_pattern {
+      values = ["/"]
+    }
+  }
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_alb_target_group.webserver.arn
+  }
+}
+
+resource "aws_alb_listener_rule" "api_rule1" {
+  listener_arn = aws_alb_listener.front_end.arn
+  priority     = 10
+
+  condition {
+    path_pattern {
+      values = [
+        "/languages",
+        "/languages/*",
+        "/languages/*/*",
+        "/ok"
+      ]
+    }
+  }
+
+  action {
+    type             = "forward"
+    target_group_arn = aws_alb_target_group.api.arn
+  }
+}
+
+#====================================
+
+resource "aws_autoscaling_group" "asg" {
+  vpc_zone_identifier = var.private_subnets
+
+  desired_capacity = var.asg_desired
+  max_size         = var.asg_max_size
+  min_size         = var.asg_min_size
+
+  target_group_arns = [aws_alb_target_group.webserver.arn, aws_alb_target_group.api.arn]
+
+  launch_template {
+    id      = aws_launch_template.apptemplate.id
+    version = "$Latest"
+  }
+}
+
+data "aws_instances" "application" {
+  instance_tags = {
+    Name  = "FrontendApp"
+    Owner = "Udemy"
+  }
+
+  instance_state_names = ["pending", "running"]
+
+  depends_on = [
+    aws_autoscaling_group.asg
+  ]
 }
 ```
 
@@ -126,12 +303,12 @@ _AWS Architecture_
 
 - <mark>workstation_ip </mark>: The Terraform variable workstation_ip represents your workstation's external perimeter public IP address, and needs to be represented using CIDR notation. This IP address is used later on within the Terraform infrastructure provisioning process to lock down SSH access on the instance(s) (provisioned by Terraform) - this is a security safety measure to prevent anyone else from attempting SSH access. The public IP address will be different and unique for each user - the easiest way to get this address is to type "what is my ip address" in a google search. As an example response, lets say Google responded with 202.10.23.16 - then the value assigned to the Terraform workstation_ip variable would be 202.10.23.16/32 (note the /32 is this case indicates that it is a single IP address).
 
-- key_name: The Terraform variable key_name represents the AWS SSH Keypair name that will be used to allow SSH access to the Bastion Host that gets created at provisioning time. If you intend to use the Bastion Host - then you will need to create your own SSH Keypair (typically done within the AWS EC2 console) ahead of time.
-      The required Terraform workstation_ip and key_name variables can be established multiple ways, one of which is to prefix the variable name with TF_VAR_ and have it then set as an environment variable within your shell, something like:
-      Linux: export TF_VAR_workstation_ip=202.10.23.16/32 and export TF_VAR_key_name=your_ssh_key_name
-      Windows: set TF_VAR_workstation_ip=202.10.23.16/32 and set TF_VAR_key_name=your_ssh_key_name
+- <mark>key_name</mark>: The Terraform variable key_name represents the AWS SSH Keypair name that will be used to allow SSH access to the Bastion Host that gets created at provisioning time. If you intend to use the Bastion Host - then you will need to create your own SSH Keypair (typically done within the AWS EC2 console) ahead of time.
+   - The required Terraform workstation_ip and key_name variables can be established multiple ways, one of which is to prefix the variable name with TF_VAR_ and have it then set as an environment variable within your shell, something like:
+   - Linux: <mark>export TF_VAR_workstation_ip=202.10.23.16/32</mark> and <mark>export TF_VAR_key_name=your_ssh_key_name</mark>
+   - Windows: <mark>set TF_VAR_workstation_ip=202.10.23.16/32</mark> and <mark>set TF_VAR_key_name=your_ssh_key_name</mark>
 
--Terraform environment variables are documented here: https://www.terraform.io/cli/config/environment-variables
+- Terraform environment variables are documented here: https://www.terraform.io/cli/config/environment-variables
 
 
 
