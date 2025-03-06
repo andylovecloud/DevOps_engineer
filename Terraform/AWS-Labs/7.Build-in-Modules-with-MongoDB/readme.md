@@ -6,3 +6,7 @@
  - VPC, Subnet, Security Group.
  - EC2, Application Load Balancer, Target Group, Autoscaling Group.
  - MongoDB database.
+
+**System diagram of the requirement**
+
+<img width="723" alt="Screenshot 2025-03-06 at 10 23 18" src="https://github.com/user-attachments/assets/543a2f8b-fab9-4773-b7e6-ae9cb391f6ba" />
