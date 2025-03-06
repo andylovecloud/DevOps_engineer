@@ -13,14 +13,16 @@
 
 ## Troubleshoot
 If you are using MacOS, especialy from chip **Apple M1** to latest version. You might meet below error while run "**terraform init**":
-´´´
-**Error: Incompatible provider version**
+
+```
+Error: Incompatible provider version
 │ 
 │ Provider registry.terraform.io/hashicorp/template v2.2.0 does not have a package available for your current platform, darwin_arm64.
 │ 
 │ Provider releases are separate from Terraform CLI releases, so not all providers are available for all platforms. Other versions of this provider may have
 │ different platforms supported.
-´´´
+```
+
 
 ![Screenshot 2025-03-06 at 12 17 24](https://github.com/user-attachments/assets/da6bdb55-7b32-43c7-adf9-098113bb3ae1)
 
