@@ -8,4 +8,4 @@ app_instance_type     = "t3.micro"
 app_ami = "ami-0fea1654c99ae8095" #Ubuntu 20.04
 db_instance_type      = "t3.micro"
 db_ami = "ami-0fa377108253bf620" #Ubuntu 22.04
-keypair_path = "./keypair/udemy-key.pub"
+keypair_path = "../keypair/udemy-key.pub"
