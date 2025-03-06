@@ -27,12 +27,15 @@ Error: Incompatible provider version
 ![Screenshot 2025-03-06 at 12 17 24](https://github.com/user-attachments/assets/da6bdb55-7b32-43c7-adf9-098113bb3ae1)
 
 Then you might run the following steps below to solved the problem:
-´´´
+
+```
 brew install kreuzwerker/taps/m1-terraform-provider-helper
 m1-terraform-provider-helper activate
 m1-terraform-provider-helper install hashicorp/template -v v2.2.0
-´´´
+```
+
 ![Screenshot 2025-03-06 at 12 31 29](https://github.com/user-attachments/assets/f5d483cf-4cd1-4211-833e-b0294df1bc61)
+
 
 Then run again  "**terraform init**" to check the result.
 
