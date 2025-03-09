@@ -46,7 +46,8 @@ Kubernetes-Architecture:
 
 ## Basic components of a Kubernetes cluster
 
-<img width="1235" alt="Screenshot 2025-03-09 at 20 43 36" src="https://github.com/user-attachments/assets/6c08fbd8-79b8-4fbe-a0bd-eccb92213038" />
+<img width="1235" alt="Screenshot 2025-03-09 at 20 43 36" src="https://github.com/user-attachments/assets/3642703b-8264-4fcd-829e-3e316e1eff5e" />
+
 
 A simple model of a K8s cluster consisting of Master nodes (Control Plane) and Worker nodes.
 
