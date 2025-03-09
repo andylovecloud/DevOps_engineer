@@ -70,12 +70,12 @@ _Source: https://kubernetes.io/docs/concepts/overview/components/_
 - **runtime**: helps run containers on worker nodes
 - **kubectl**: command line tool for interacting with Kubernetes clusters
 
-´´´
+```
 kubectl run my-hello-kube
 kubectl get services
 kubectl describe nodes my-node
 kubectl apply –f myconfig.yaml
-´´´
+```
 
 ## Kubernetes concepts need to pay attention: 
 
