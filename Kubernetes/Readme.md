@@ -53,6 +53,35 @@ A simple model of a K8s cluster consisting of Master nodes (Control Plane) and W
 
 <img width="542" alt="Screenshot 2025-03-09 at 20 46 38" src="https://github.com/user-attachments/assets/d10e71d9-bd62-4be1-a588-ea1174f8e42f" />
 
+### Control Plan (Master node)
+
+|  |  |
+|---|--- | 
+| <img width="821" alt="Screenshot 2025-03-09 at 20 50 46" src="https://github.com/user-attachments/assets/0ed12645-db30-4653-9ba5-8d4b0da4b467" /> | <img width="321" alt="Screenshot 2025-03-09 at 20 50 52" src="https://github.com/user-attachments/assets/f58f4cef-2cde-4ec6-acd5-cf7c8386bbc9" /> |
+
+_Source: https://kubernetes.io/docs/concepts/overview/components/_
+
+### Work node
+
+<img width="1369" alt="Screenshot 2025-03-09 at 21 01 05" src="https://github.com/user-attachments/assets/4cdb1eb7-bec7-4c0f-9142-a5835f94499c" />
+
+- **kubelet**: agent running on Worker node that communicates with Master
+- **k-proxy**: responsible for managing network communication
+- **runtime**: helps run containers on worker nodes
+- **kubectl**: command line tool for interacting with Kubernetes clusters
+
+´´´
+kubectl run my-hello-kube
+kubectl get services
+kubectl describe nodes my-node
+kubectl apply –f myconfig.yaml
+´´´
+
+## Kubernetes concepts need to pay attention: 
+
+<img width="1049" alt="Screenshot 2025-03-09 at 21 11 21" src="https://github.com/user-attachments/assets/7de49732-ce63-4c61-9fe9-6dcbcf0680b4" />
+
+
 
 
 
