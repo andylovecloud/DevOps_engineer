@@ -14,7 +14,7 @@ I could improve my knowledge from the theory to practical.
 ## Ansible and GUI
 |          |        |
 |---------------     |-------------- |
-|- Ansible Tower (GUI) part of an annual RedHat Ansible Automation Platform subscription. <br> - Ansible Tower is based on https://github.com/ansible/awx and that version is Free and open source. <br>- There is alternative GUI to Ansible like https://github.com/ansiblesemaphore/semaphore. | <img width="590" alt="Ansible-GUI" src="https://github.com/user-attachments/assets/17bf56f7-faea-4cf6-b839-da7cc6743637" /> |
+|- Ansible Tower (GUI) part of an annual RedHat Ansible Automation Platform subscription. <br> - Ansible Tower is based on https://github.com/ansible/awx and that version is Free and open source. <br>- There is alternative GUI to Ansible like http://semaphoreui.com/. | <img width="590" alt="Ansible-GUI" src="https://github.com/user-attachments/assets/17bf56f7-faea-4cf6-b839-da7cc6743637" /> |
 
 
 
