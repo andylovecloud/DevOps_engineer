@@ -16,13 +16,14 @@ After login you can see the dashboard like below:
 
 Go to Dashboard -> New items, enter the name:
 
-<img src="Jenkins/AWS-Labs/1.Lab-basic-1st-Hello-job/Step-2-Configurate-new-job.png"> </img>
+<img src="Step-2-Configurate-new-job.png"> </img>
 
 Update the filed **Command** in **Configuration** with below code:
- ´´´
+ 
+ ```
  echo "Build Step 01-Hello world"
  echo "Devops for beginner on AWS"
- ´´´
+ ```
 
 Click **Save**
 
@@ -30,11 +31,11 @@ Click **Save**
 
 After item build, run test and check the result in **Console Output** session if it SUCCESS or not:
 
-<img src="Jenkins/AWS-Labs/1.Lab-basic-1st-Hello-job/Step-3-Build-and-Test.png"> </img>
+<img src="Step-3-Build-and-Test.png"> </img>
 
 
 ## View workplace of job
 
 Check again if the job actually created in **Workplace** session:
 
-<img src="Jenkins/AWS-Labs/1.Lab-basic-1st-Hello-job/Step-4-View-Workplace.png"> </img>
+<img src="Step-4-View-Workplace.png"> </img>
