@@ -28,6 +28,10 @@ Steps to implement Infra as code:
 
 
 ### Common tools in IaC:
+
+![Screenshot 2025-03-13 at 9 53 00](https://github.com/user-attachments/assets/8a0966ed-46ba-4140-af0a-e8d9c9198f7b)
+
+
 - **CloudFormation**: Provider: Amazon Web Services (AWS). This service allow users to define, implement infrastructure and resources by template(Yaml or Json)
 - **AWS Cloud Development Kit (CDK)**: Tool allows define cloud infrastructure by popular programming languages: TypeScript, JavaScript, Python, C# and Java. Provision resource automatically. Basically, behind CDK still available CloudFormation stack.
 - [**Terraform**](https://github.com/andylovecloud/DevOps_engineer/tree/main/Terraform): Provider: HashiCorp. Open source tool allows user define infrastructure as code, flexibility and compatibility with many cloud providers (AWS, Azure, GCP). Terraform does not create CloudFormation stack during deployment.
