@@ -3,6 +3,12 @@
 
 Jenkins allows you to create jobs to perform tasks such as **building source, running automation tests, deploying applications**, and reporting results. By integrating with other tools and using available plugins, Jenkins can be customized and extended to suit your software development needs.
 
+## Table of Content
+- [Why is Jenkins?](https://github.com/andylovecloud/DevOps_engineer/tree/main/Jenkins#why-is-jenkins-so-popular)
+- [Installation instruction on EC2 with Unbuntu](https://github.com/andylovecloud/DevOps_engineer/tree/main/Jenkins#instructions-for-installing-jenkins-on-ec2-ubuntu)
+- [Jenkins CI/CD concept](https://github.com/andylovecloud/DevOps_engineer/tree/main/Jenkins#jenkins-cicd-concept)
+
+
 ## Why is Jenkins so popular?
 
 - **Ease of use**: Jenkins has a friendly and easy-to-use user interface. Users can create and manage jobs easily through a web interface.
