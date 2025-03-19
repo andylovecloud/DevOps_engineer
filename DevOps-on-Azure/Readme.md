@@ -1,6 +1,7 @@
 # What is Azure DevOps?
 
-Azure DevOps provides several tools you can use for better team collaboration. It also has tools for automated build processes, testing, version control, and package management
+Azure DevOps provides several tools you can use for better team collaboration. It also has tools for automated build processes, testing, version control, and package management. 
+Below are some example tools:
 
 |             Service              |       Description        |
 |---------------     |-------------- |
