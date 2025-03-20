@@ -13,3 +13,7 @@ Below are some example tools:
 
 
 
+
+## Other materials
+
+- [DevOps For Dummies® 3rd IBM Limited Edition](https://www.ibm.com/downloads/documents/us-en/10a99803c9afdb83)
