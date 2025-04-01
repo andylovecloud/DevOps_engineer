@@ -9,6 +9,11 @@
 - Works efficiently and quickly even with repositories with large codebases.
 - Uses a content-addressable file system to save all versions of files in the repository for quick access and easy retrieval of old versions.
 - Changes on Git will usually be adding new content. Even if you **revert** a change it will create an additional commit that means reverting, not completely deleting it.
+- In short about Git:
+  - Installed and used on your local machine
+  - Handles version control
+  - Supports branching
+
 
 ## Git architecture
 |                    |               |
