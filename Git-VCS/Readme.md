@@ -83,3 +83,36 @@ When combining code between a feature branch and a main branch (e.g. develop), t
 - **Resolve Conflicts appropriately**: Take the time to understand the code content before resolving conflicts.
 - **Use Git Tags and Releases**: Use git tags for important milestones. Helps track releases, manage stable versions, and simplify the deployment process.
 - **Backup and Remote Repositories**: Regularly backup remote repository to avoid data loss.
+
+### Summary Workflow for Branching and Merging (when working with team)
+
+1. Create and Switch to a New Branch **git checkout -b feature-branch-name**
+2. make changes and stage them. 1st command is for checking status and second command for staging all changes.
+```
+git status 
+git add .  
+```
+3. commit the changes **git commit -m "Brief description of what you changed"**
+
+4. Push the Branch to Remote **git push origin feature-branch-name**  Note: feature-branch-name is the name of new branch you created previously in 1st step.
+
+5. Submit a Pull Request (PR). 
+Git itself doesn’t submit PRs—you do this via GitHub. But you can Open the Pull Request via CLI. 
+**gh pr create --base main --head feature-branch-name --title "Add feature" --body "Explain your changes"**
+Note. Running above command requires GitHub CLI (gh) https://cli.github.com installed and authenticated, alternatively you can do above from Github Web Interface too.
+
+6. Discuss & Review the PR (Pull Request). Collaborators can leave comments on GitHub. To interact via CLI: bash Copy Edit
+**gh pr view --web**             # opens PR in browser
+**gh pr comment --body "Looks good!"**   # add comment
+
+
+7. Merge the PR to Main Branch. Can also be done via Github Web Interface.
+**gh pr merge --merge**          # merge with a merge commit
+# OR
+**gh pr merge --squash**         # squash all commits into one
+
+
+8. Pull Latest Main Branch Locally (After merging, #7 above)
+**git checkout main**
+**git pull origin main**
+
