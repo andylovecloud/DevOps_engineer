@@ -101,18 +101,24 @@ Git itself doesn’t submit PRs—you do this via GitHub. But you can Open the P
 **gh pr create --base main --head feature-branch-name --title "Add feature" --body "Explain your changes"**
 Note. Running above command requires GitHub CLI (gh) https://cli.github.com installed and authenticated, alternatively you can do above from Github Web Interface too.
 
-6. Discuss & Review the PR (Pull Request). Collaborators can leave comments on GitHub. To interact via CLI: bash Copy Edit
+6. Discuss & Review the PR (Pull Request). Collaborators can leave comments on GitHub. To interact via CLI: bash Copy Edit <br>
 **gh pr view --web**             # opens PR in browser
+
 **gh pr comment --body "Looks good!"**   # add comment
 
 
-7. Merge the PR to Main Branch. Can also be done via Github Web Interface.
+8. Merge the PR to Main Branch. Can also be done via Github Web Interface.
+
 **gh pr merge --merge**          # merge with a merge commit
+
 OR
+
 **gh pr merge --squash**         # squash all commits into one
 
 
-8. Pull Latest Main Branch Locally (After merging, #7 above)
+9. Pull Latest Main Branch Locally (After merging, #7 above)
+
 **git checkout main**
+
 **git pull origin main**
 
