@@ -108,7 +108,7 @@ Note. Running above command requires GitHub CLI (gh) https://cli.github.com inst
 
 7. Merge the PR to Main Branch. Can also be done via Github Web Interface.
 **gh pr merge --merge**          # merge with a merge commit
-# OR
+OR
 **gh pr merge --squash**         # squash all commits into one
 
 
