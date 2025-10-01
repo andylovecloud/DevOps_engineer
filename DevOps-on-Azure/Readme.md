@@ -17,3 +17,4 @@ Below are some example tools:
 ## Other materials
 
 - [DevOps For Dummies® 3rd IBM Limited Edition](https://www.ibm.com/downloads/documents/us-en/10a99803c9afdb83)
+- [Full course AzureDevOps-Zero-to-Hero with real-time projects](https://github.com/andylovecloud/AzureDevOps-Zero-to-Hero)
