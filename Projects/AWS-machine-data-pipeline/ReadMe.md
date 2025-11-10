@@ -73,7 +73,7 @@ v
 | **API Stage**   | Gateway stage    | `dev`                      |
 
 
-🪣 <h2>Step 1 – Create S3 Data Lake</h2>
+<h2>🪣 Step 1 – Create S3 Data Lake</h2>
 1. Go to **AWS Console → S3 → Create bucket**
 2. Bucket name: **kc-machine-data-yourname**
 3. Region: your region (e.g., eu-north-1)
@@ -81,7 +81,7 @@ v
 5. Click **Create bucket**
 
 
-👤 <h2>Step 2 – Create Lambda Execution Role (IAM)</h2>
+<h2>👤 Step 2 – Create Lambda Execution Role (IAM)</h2>
 
 1. Go to **IAM → Roles → Create role**
 2. Trusted entity: **Lambda**
@@ -92,7 +92,7 @@ v
 5. Click **Create role**
    
    
-🧠 <h2>Step 3 – Create Lambda Function</h2>
+<h2>🧠 Step 3 – Create Lambda Function</h2>
 
 1. Go to **Lambda → Create function**
 - Name: **process_iot_data**
@@ -149,7 +149,7 @@ Deploy and test with sample input:
 ✅ Expected result: Status 200, and JSON file appears in S3.
 
 
-🌐 <h2>Step 4 – Create API Gateway (HTTP API)</h2>
+<h2>🌐 Step 4 – Create API Gateway (HTTP API)</h2>
 
 1. Go to **API Gateway → Create API**
 2. Choose **HTTP API → Build**
@@ -173,7 +173,7 @@ You should get:
 {"message": "Data stored successfully"}
 
 
-💻 <h2>Step 5 – Run Local Sensor Simulator</h2>
+<h2>💻 Step 5 – Run Local Sensor Simulator</h2>
 
 Run this locally on your computer to simulate IoT devices:
 
@@ -214,7 +214,7 @@ python src/sensor_simulator.py
 ✅ You should see 200 responses and JSON files in S3.
 
 
-🧮 <h2>Step 6 – Create Glue Database & Crawler</h2>
+<h2>🧮 Step 6 – Create Glue Database & Crawler</h2>
 
 1. Go to **AWS Glue → Databases → Create database**
 
@@ -232,7 +232,7 @@ python src/sensor_simulator.py
 3. When finished, you’ll see a table (e.g. **iot_data**).
 
 
-🔍 <h2>Step 7 – Query in Athena</h2>
+<h2>🔍 Step 7 – Query in Athena</h2>
 
 1. Go to **Athena**
 2. Set query results location:
@@ -260,7 +260,7 @@ LIMIT 50;
 ✅ You should see data from S3.
 
 
-📊 <h2>Step 8 – (Optional) Streamlit Dashboard</h2>
+<h2>📊 Step 8 – (Optional) Streamlit Dashboard</h2>
 
 Install:
 
@@ -304,7 +304,7 @@ Run:
 streamlit run src/dashboard.py
 
 
-🧰 <h2>Troubleshooting </h2>
+<h2>🧰 Troubleshooting </h2>
 | Problem                      | Likely Cause                    | Fix                                |
 | ---------------------------- | ------------------------------- | ---------------------------------- |
 | 500 from API                 | Lambda error                    | Check CloudWatch logs              |
@@ -314,7 +314,7 @@ streamlit run src/dashboard.py
 | `COLUMN_NOT_FOUND` in Athena | Schema mismatch                 | Use `SHOW COLUMNS` and correct SQL |
 
 
-🧹 <h2>Cleanup</h2>
+<h2>🧹 Cleanup</h2>
 
 1. Delete API Gateway
 2. Delete Lambda function
