@@ -306,6 +306,7 @@ streamlit run src/dashboard.py
 
 
 <h2>🧰 Troubleshooting </h2>
+
 | Problem                      | Likely Cause                    | Fix                                |
 | ---------------------------- | ------------------------------- | ---------------------------------- |
 | 500 from API                 | Lambda error                    | Check CloudWatch logs              |
