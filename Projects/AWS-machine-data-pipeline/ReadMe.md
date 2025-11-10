@@ -74,6 +74,7 @@ v
 
 
 <h2>🪣 Step 1 – Create S3 Data Lake</h2>
+
 1. Go to **AWS Console → S3 → Create bucket**
 2. Bucket name: **kc-machine-data-yourname**
 3. Region: your region (e.g., eu-north-1)
