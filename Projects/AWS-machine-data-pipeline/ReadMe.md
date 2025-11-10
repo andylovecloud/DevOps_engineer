@@ -25,22 +25,8 @@ It ingests simulated machine telemetry data via an API, processes it using AWS L
 ---
 
 ## ⚙️ Architecture & Purpose
-Python Sensor Simulator
-| (HTTPS JSON)
-v
-Amazon API Gateway (HTTP API)
-v
-AWS Lambda (process_iot_data)
-v
-Amazon S3 (Data Lake: raw JSON, partitioned by day/machine)
-v
-AWS Glue Crawler (schema discovery)
-v
-Amazon Athena (SQL analytics)
-v
-(Optional) Streamlit Dashboard
 
-
+<img width="1536" height="1024" alt="AWS Machine Data Pipeline" src="https://github.com/user-attachments/assets/de9ec13b-25d0-479c-9267-bb2cca135226" />
 
 | Service | Role |
 |----------|------|
@@ -50,6 +36,8 @@ v
 | **AWS Glue** | Automatically detects schema and registers the table for Athena. |
 | **Amazon Athena** | Query data in S3 using SQL. |
 | **Streamlit (Optional)** | Visualize live sensor data in a dashboard. |
+
+
 
 ---
 
@@ -81,6 +69,8 @@ v
 4. Leave “Block all public access” **ON**
 5. Click **Create bucket**
 
+<img width="1665" height="774" alt="2025-11-10_12h16_39" src="https://github.com/user-attachments/assets/53f34836-77e5-4966-ab46-05810f30119d" />
+
 
 <h2>👤 Step 2 – Create Lambda Execution Role (IAM)</h2>
 
@@ -92,7 +82,7 @@ v
 4. Name: **lambda_s3_writer_role**
 5. Click **Create role**
    
-   
+
 <h2>🧠 Step 3 – Create Lambda Function</h2>
 
 1. Go to **Lambda → Create function**
@@ -103,6 +93,9 @@ v
 2. Add environment variable:
 - Key: **<BUCKET_NAME>**
 - Value: **kc-machine-data-<yourname>**
+
+<img width="1656" height="1144" alt="2025-11-10_12h13_34" src="https://github.com/user-attachments/assets/990a7b73-1baf-4574-82db-5130dcaffdaf" />
+
 
 3. Replace default code with:
 
@@ -150,6 +143,8 @@ Deploy and test with sample input:
 ✅ Expected result: Status 200, and JSON file appears in S3.
 
 
+
+
 <h2>🌐 Step 4 – Create API Gateway (HTTP API)</h2>
 
 1. Go to **API Gateway → Create API**
@@ -158,6 +153,10 @@ Deploy and test with sample input:
 4. Route: **POST /upload**
 5. Stage: **dev**
 6. Click **Create**
+
+
+<img width="1707" height="1166" alt="2025-11-10_12h12_51" src="https://github.com/user-attachments/assets/7b131a0a-4ba5-4d58-88d8-f5822eb82457" />
+
 
 Copy Invoke URL, e.g.
 _**https://abcd1234.execute-api.eu-north-1.amazonaws.com/dev/upload**_
@@ -221,6 +220,9 @@ python src/sensor_simulator.py
 
 - Name: **machine_data_db**
 
+<img width="1658" height="730" alt="2025-11-10_12h15_25" src="https://github.com/user-attachments/assets/788fdcb9-55e4-417d-af97-6c47f277575b" />
+
+
 2. Go to **Crawlers → Create crawler**
 
 - Name: **iot_data_crawler**
@@ -229,6 +231,8 @@ python src/sensor_simulator.py
 - Target database: **machine_data_db**
 - Schedule: **On demand**
 - Create → **Run crawler**
+
+
 
 3. When finished, you’ll see a table (e.g. **iot_data**).
 
@@ -259,6 +263,9 @@ LIMIT 50;
 
 
 ✅ You should see data from S3.
+
+
+<img width="1707" height="1166" alt="2025-11-10_12h12_51" src="https://github.com/user-attachments/assets/daa3177f-5087-4630-b5ad-c3dd75e71098" />
 
 
 <h2>📊 Step 8 – (Optional) Streamlit Dashboard</h2>
