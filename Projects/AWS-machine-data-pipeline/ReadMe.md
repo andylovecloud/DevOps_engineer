@@ -64,57 +64,45 @@ v
 
 
 🧱 Setup Variables
-Variable	Description	Example
-Region	AWS Region	eu-north-1
-S3 Bucket	Data lake bucket	kc-machine-data-yourname
-Lambda Name	Function name	process_iot_data
-Glue DB	Glue Database	machine_data_db
-API Stage	Gateway stage	dev
+| Variable        | Description      | Example                    |
+| --------------- | ---------------- | -------------------------- |
+| **Region**      | AWS Region       | `eu-north-1`               |
+| **S3 Bucket**   | Data lake bucket | `kc-machine-data-yourname` |
+| **Lambda Name** | Function name    | `process_iot_data`         |
+| **Glue DB**     | Glue Database    | `machine_data_db`          |
+| **API Stage**   | Gateway stage    | `dev`                      |
+
+
 🪣 Step 1 – Create S3 Data Lake
-
-Go to AWS Console → S3 → Create bucket
-
-Bucket name: kc-machine-data-yourname
-
-Region: your region (e.g., eu-north-1)
-
-Leave “Block all public access” ON
+1. Go to **AWS Console → S3 → Create bucket**
+2. Bucket name: **kc-machine-data-yourname**
+3. Region: your region (e.g., eu-north-1)
+4. Leave “Block all public access” **ON**
 
 Click Create bucket
 
 👤 Step 2 – Create Lambda Execution Role (IAM)
 
-Go to IAM → Roles → Create role
-
-Trusted entity: Lambda
-
-Attach policies:
-
-AmazonS3FullAccess
-
-CloudWatchLogsFullAccess
-
-Name: lambda_s3_writer_role
-
-Click Create role
-
+1. Go to **IAM → Roles → Create role**
+2. Trusted entity: **Lambda**
+3. Attach policies:
+ - **AmazonS3FullAccess**
+ - **CloudWatchLogsFullAccess**
+4. Name: **lambda_s3_writer_role**
+5. Click **Create role**
+   
 🧠 Step 3 – Create Lambda Function
 
-Go to Lambda → Create function
+1. Go to **Lambda → Create function**
+- Name: **process_iot_data**
+- Runtime: **Python 3.12**
+- Role: choose **lambda_s3_writer_role**
 
-Name: process_iot_data
+2. Add environment variable:
+- Key: **<BUCKET_NAME>**
+- Value: **kc-machine-data-<yourname>**
 
-Runtime: Python 3.12
-
-Role: choose lambda_s3_writer_role
-
-Add environment variable:
-
-Key: BUCKET_NAME
-
-Value: kc-machine-data-yourname
-
-Replace default code with:
+3. Replace default code with:
 
 import json
 import os
@@ -161,20 +149,15 @@ Deploy and test with sample input:
 
 🌐 Step 4 – Create API Gateway (HTTP API)
 
-Go to API Gateway → Create API
-
-Choose HTTP API → Build
-
-Integration: Lambda → select process_iot_data
-
-Route: POST /upload
-
-Stage: dev
-
-Click Create
+1. Go to **API Gateway → Create API**
+2. Choose **HTTP API → Build**
+3. Integration: **Lambda** → select **process_iot_data**
+4. Route: **POST /upload**
+5. Stage: **dev**
+6. Click **Create**
 
 Copy Invoke URL, e.g.
-https://abcd1234.execute-api.eu-north-1.amazonaws.com/dev/upload
+_**https://abcd1234.execute-api.eu-north-1.amazonaws.com/dev/upload**_
 
 ✅ Test via Postman or cURL:
 
@@ -197,7 +180,7 @@ python -m venv .venv && source .venv/bin/activate
 pip install requests
 
 
-Create src/sensor_simulator.py:
+Create **src/sensor_simulator.py**:
 
 import json, random, time, requests
 from datetime import datetime, UTC
@@ -229,34 +212,27 @@ python src/sensor_simulator.py
 
 🧮 Step 6 – Create Glue Database & Crawler
 
-Go to AWS Glue → Databases → Create database
+1. Go to **AWS Glue → Databases → Create database**
 
-Name: machine_data_db
+- Name: **machine_data_db**
 
-Go to Crawlers → Create crawler
+2. Go to **Crawlers → Create crawler**
 
-Name: iot_data_crawler
+- Name: **iot_data_crawler**
+- Data source: **s3://kc-machine-data-yourname/iot_data/**
+- IAM role: new one (Glue will request read access)
+- Target database: **machine_data_db**
+- Schedule: **On demand**
+- Create → **Run crawler**
 
-Data source: s3://kc-machine-data-yourname/iot_data/
-
-IAM role: new one (Glue will request read access)
-
-Target database: machine_data_db
-
-Schedule: On demand
-
-Create → Run crawler
-
-When finished, you’ll see a table (e.g. iot_data).
+3. When finished, you’ll see a table (e.g. **iot_data**).
 
 🔍 Step 7 – Query in Athena
 
-Go to Athena
-
-Set query results location:
-s3://kc-machine-data-yourname-athena-results/
-
-Choose database: machine_data_db
+1. Go to **Athena**
+2. Set query results location:
+**s3://kc-machine-data-yourname-athena-results/**
+3. Choose database: **machine_data_db**
 
 Run:
 
@@ -285,7 +261,7 @@ Install:
 pip install streamlit boto3 pandas
 
 
-Create src/dashboard.py:
+Create **src/dashboard.py**:
 
 import streamlit as st
 import pandas as pd
@@ -322,22 +298,21 @@ Run:
 streamlit run src/dashboard.py
 
 🧰 Troubleshooting
-Problem	Likely Cause	Fix
-500 from API	Lambda error	Check CloudWatch logs
-KeyError: 'BUCKET_NAME'	Missing env var	Add BUCKET_NAME in Lambda config
-AccessDenied	Lambda role lacks S3 permission	Attach AmazonS3FullAccess
-No file in S3	Wrong API URL	Use /dev/upload stage
-COLUMN_NOT_FOUND in Athena	Schema mismatch	Use SHOW COLUMNS and correct SQL
+| Problem                      | Likely Cause                    | Fix                                |
+| ---------------------------- | ------------------------------- | ---------------------------------- |
+| 500 from API                 | Lambda error                    | Check CloudWatch logs              |
+| `KeyError: 'BUCKET_NAME'`    | Missing env var                 | Add `BUCKET_NAME` in Lambda config |
+| `AccessDenied`               | Lambda role lacks S3 permission | Attach `AmazonS3FullAccess`        |
+| No file in S3                | Wrong API URL                   | Use `/dev/upload` stage            |
+| `COLUMN_NOT_FOUND` in Athena | Schema mismatch                 | Use `SHOW COLUMNS` and correct SQL |
+
 🧹 Cleanup
 
-Delete API Gateway
+1. Delete API Gateway
+2. Delete Lambda function
+3. Delete Glue Crawler & Database
+4. Delete Athena results bucket
+5. Delete S3 bucket
+6. Delete IAM Role (if created only for this demo)
 
-Delete Lambda function
 
-Delete Glue Crawler & Database
-
-Delete Athena results bucket
-
-Delete S3 bucket
-
-Delete IAM Role (if created only for this demo)
