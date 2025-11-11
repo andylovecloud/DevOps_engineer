@@ -99,6 +99,7 @@ It ingests simulated machine telemetry data via an API, processes it using AWS L
 
 3. Replace default code with:
 
+```
 import json
 import os
 import boto3
@@ -128,17 +129,17 @@ def lambda_handler(event, context):
 
     s3.put_object(Bucket=BUCKET, Key=key, Body=json.dumps(body).encode("utf-8"))
     return {"statusCode": 200, "body": json.dumps({"message": "Data stored successfully"})}
-
+```
 
 Deploy and test with sample input:
-
+```
 {
   "machine_id": "M-1",
   "temperature": 45.5,
   "vibration": 0.9,
   "timestamp": "2025-11-10T10:00:00Z"
 }
-
+```
 
 ✅ Expected result: Status 200, and JSON file appears in S3.
 
@@ -185,6 +186,7 @@ pip install requests
 
 Create **src/sensor_simulator.py**:
 
+```
 import json, random, time, requests
 from datetime import datetime, UTC
 
@@ -204,12 +206,12 @@ if __name__ == "__main__":
         r = requests.post(API_URL, json=payload, timeout=10)
         print(r.status_code, payload)
         time.sleep(3)
-
+```
 
 Run it:
-
+```
 python src/sensor_simulator.py
-
+```
 
 ✅ You should see 200 responses and JSON files in S3.
 
@@ -245,12 +247,12 @@ python src/sensor_simulator.py
 3. Choose database: **machine_data_db**
 
 Run:
-
+```
 SHOW COLUMNS IN machine_data_db."iot_data";
-
+```
 
 Then:
-
+```
 SELECT
   regexp_extract("$path", 'machine=([^/]+)/', 1) AS machine,
   regexp_extract("$path", 'day=([0-9\-]+)/', 1)  AS day,
@@ -260,7 +262,7 @@ SELECT
 FROM machine_data_db."iot_data"
 ORDER BY ts DESC
 LIMIT 50;
-
+```
 
 ✅ You should see data from S3.
 
@@ -271,12 +273,14 @@ LIMIT 50;
 <h2>📊 Step 8 – (Optional) Streamlit Dashboard</h2>
 
 Install:
-
+```
 pip install streamlit boto3 pandas
 
+```
 
 Create **src/dashboard.py**:
 
+```
 import streamlit as st
 import pandas as pd
 import boto3, json
@@ -305,7 +309,7 @@ else:
     st.dataframe(df.tail(20))
     agg = df.groupby("machine_id")[["temperature","vibration"]].mean().reset_index()
     st.bar_chart(agg.set_index("machine_id"))
-
+```
 
 Run:
 
