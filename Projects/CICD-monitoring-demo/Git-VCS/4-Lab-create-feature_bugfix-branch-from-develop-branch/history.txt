@@ -1,0 +1,16 @@
+  685  git commit -m "Add index.html and modify README.md"
+  686  git status
+  687  git push origin develop
+  688  clear
+  689  git status
+  690  git add .
+  691  git status
+  692  git commit -m "modify index.html file"
+  693  git push origin develop
+  694  clear
+  695  git checkout -b feature/F001
+  696  git add .
+  697  git commit -m "Implement ticket F001: add form in index.html file"
+  698  git push origin feature/F001
+  699  clear
+  700  history 

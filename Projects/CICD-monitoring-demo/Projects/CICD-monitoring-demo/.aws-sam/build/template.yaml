@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: FastAPI on Lambda with API Gateway + CI/CD
+Globals:
+  Function:
+    Runtime: python3.12
+    MemorySize: 256
+    Timeout: 10
+    Tracing: Active
+Resources:
+  FastApiFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: fastapi-cicd-demo
+      CodeUri: FastApiFunction
+      Handler: app.handler
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+      Policies:
+      - AWSLambdaBasicExecutionRole
+    Metadata:
+      SamResourceId: FastApiFunction
+Outputs:
+  ApiBaseUrl:
+    Description: Invoke URL base (append /health)
+    Value:
+      Fn::Sub: https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod
