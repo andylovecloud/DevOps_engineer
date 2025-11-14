@@ -1,0 +1,16 @@
+  726  git checkout main
+  727  clear
+  728  git checkout main
+  729  git pull
+  730  git tag v0.1 main
+  731  git status
+  732  git push origin main
+  733  git push origin --tags
+  734  history
+  735  history
+  736  history
+  737  ssh -i "udemy-stockholm-key.pem" ubuntu@ec2-13-60-218-223.eu-north-1.compute.amazonaws.com
+  738  clear
+  739  ssh -i "udemy-stockholm-key.pem" ubuntu@ec2-13-60-218-223.eu-north-1.compute.amazonaws.com
+  740  ssh -i "udemy-stockholm-key.pem" ubuntu@ec2-13-60-218-223.eu-north-1.compute.amazonaws.com
+  741  ssh -i "udemy-stockholm-key.pem" ubuntu@ec2-13-60-218-223.eu-north-1.compute.amazonaws.com
