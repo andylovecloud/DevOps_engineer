@@ -5,7 +5,7 @@ This document outlines the process for creating, organizing, and executing test 
 **Purpose**: Standardize test case management.
 **Scope**: Applies to all QA members involved in manual or automated testing.
 
-Detail instruction can be foud via the file [here](Test-Case-Management/PT-Test Case Management-141125-101925.pdf)
+Detail instruction can be foud via the file [Test-Case-Management](https://github.com/andylovecloud/DevOps_engineer/blob/main/Test-Case-Management/PT-Test%20Case%20Management-141125-101925.pdf))
 
 ✅ Pre-requisites
 
